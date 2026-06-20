@@ -21,14 +21,33 @@
   </header>
 
   <main>
-    <section class="hero">
-      <p class="eyebrow">Computational chemistry · molecular simulation · scientific computing</p>
-      <h1>Modeling molecular systems with simulation, analysis, and reproducible research software.</h1>
-      <p class="lede">I am a computational chemist focused on molecular dynamics, polymer and nanoparticle modeling, TDDFT analysis, docking-oriented workflows, and HPC-enabled scientific computing. My work connects molecular-level simulation outputs to interpretable chemical mechanisms.</p>
-      <div class="actions">
-        <a class="button" href="projects.html">View projects</a>
-        <a class="button secondary" href="research.html">Research focus</a>
+    <section class="hero hero-grid">
+      <div>
+        <p class="eyebrow">Computational chemistry · molecular simulation · scientific computing</p>
+        <h1>Modeling molecular systems with simulation, analysis, and reproducible research software.</h1>
+        <p class="lede">I am a computational chemist focused on molecular dynamics, polymer and nanoparticle modeling, TDDFT analysis, docking-oriented workflows, and HPC-enabled scientific computing. My work connects molecular-level simulation outputs to interpretable chemical mechanisms.</p>
+        <div class="actions">
+          <a class="button" href="projects.html">View projects</a>
+          <a class="button secondary" href="research.html">Research focus</a>
+        </div>
       </div>
+      <aside class="hero-card" aria-label="Professional summary">
+        <h2>Profile snapshot</h2>
+        <dl>
+          <dt>Primary lane</dt>
+          <dd>Computational chemistry & molecular modeling</dd>
+          <dt>Methods</dt>
+          <dd>MD, docking-oriented workflows, TDDFT, trajectory analysis</dd>
+          <dt>Computing</dt>
+          <dd>Python, Bash, Linux, Slurm, HPC/GPU workflows</dd>
+          <dt>Systems</dt>
+          <dd>PLGA nanoparticles, ionic-liquid interfaces, biomolecular systems</dd>
+        </dl>
+        <div class="actions">
+          <a class="button small" href="https://github.com/senal-liyanage">GitHub</a>
+          <a class="button small secondary" href="https://scholar.google.com/citations?user=DEt6kbQAAAAJ&hl=en">Scholar</a>
+        </div>
+      </aside>
     </section>
 
     <section>
@@ -50,22 +69,45 @@
     </section>
 
     <section>
+      <h2>Target role alignment</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Computational chemist / molecular modeling scientist</h3>
+          <p><strong>Evidence:</strong> molecular simulation analysis, polymer/nanoparticle modeling, TDDFT post-processing, and chemistry-aware research software.</p>
+        </article>
+        <article class="card">
+          <h3>Scientific computing / HPC specialist</h3>
+          <p><strong>Evidence:</strong> Linux, Slurm, Python/Bash scripting, simulation workflow design, and GPU/HPC-enabled computational chemistry practice.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
       <h2>Selected portfolio repositories</h2>
       <div class="project-list">
         <article class="project-card">
           <h3><a href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a></h3>
           <p class="meta">Python · MDAnalysis · Open Babel · molecular simulation analysis</p>
           <p>Lightweight computational chemistry utilities and molecular-simulation analysis scaffolds, including radial density, radius-shell counts, and interfacial orientation templates.</p>
+          <div class="actions">
+            <a class="button small secondary" href="https://github.com/senal-liyanage/chemistry-analysis-tools">Repository</a>
+          </div>
         </article>
         <article class="project-card">
           <h3><a href="https://github.com/senal-liyanage/polymer-tool">polymer-tool</a></h3>
           <p class="meta">Python · RDKit · Packmol · PLGA nanoparticle preparation</p>
           <p>PLGA-first model-preparation workflow for chemically traceable chain construction, nanoparticle seed packing, packing assessment, provenance, and downstream handoff bundles.</p>
+          <div class="actions">
+            <a class="button small secondary" href="https://github.com/senal-liyanage/polymer-tool">Repository</a>
+          </div>
         </article>
         <article class="project-card">
           <h3><a href="https://github.com/senal-liyanage/qctddft">qctddft</a></h3>
           <p class="meta">Python · Q-Chem · TDDFT · spectral analysis</p>
           <p>Command-line toolkit for post-processing Q-Chem TDDFT calculations, generating broadened spectra, identifying spectral regions, assigning states, and clustering representative geometries.</p>
+          <div class="actions">
+            <a class="button small secondary" href="https://github.com/senal-liyanage/qctddft">Repository</a>
+          </div>
         </article>
       </div>
     </section>
