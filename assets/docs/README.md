@@ -1,14 +1,14 @@
-# Resume and CV documents
+# Public document policy
 
-Place public, approved resume/CV documents in this folder.
+Do not place full resume/CV documents in this public website repository unless they have been reviewed and intentionally sanitized for public distribution.
 
-Recommended filenames:
+Avoid committing documents that include:
 
-```text
-Senal_Liyanage_Computational_Chemistry_Resume.pdf
-Senal_Liyanage_Computational_Chemistry_Resume.docx
-```
+- personal phone numbers
+- home addresses
+- immigration or work-authorization details
+- private email addresses
+- unreleased manuscripts or collaborator-sensitive information
+- internal institutional or cluster details
 
-The website CV page can link to these files directly.
-
-Do not commit private drafts, documents with sensitive personal information, or versions that have not been reviewed for public use.
+For job applications, use role-specific resumes submitted directly through employer portals, recruiter conversations, or professional networking channels.
