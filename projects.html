@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Selected computational chemistry, molecular simulation, and scientific-computing projects by Senal Liyanage.">
+  <meta name="description" content="Selected molecular simulation and computational chemistry projects by Senal Liyanage.">
   <title>Projects | Senal Liyanage</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -14,35 +14,40 @@
       <nav aria-label="Primary navigation">
         <a href="projects.html">Projects</a>
         <a href="research.html">Research</a>
-        <a href="cv.html">CV</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Links</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero hero-compact">
-      <p class="eyebrow">Portfolio projects</p>
-      <h1>Computational chemistry workflows, analysis scripts, and research software.</h1>
-      <p class="lede">These projects demonstrate practical scientific software development, molecular simulation analysis, quantum-chemical post-processing, and workflow design for computational chemistry.</p>
+      <p class="eyebrow">Projects</p>
+      <h1>Simulation work, analysis code, and reproducible workflow notes.</h1>
+      <p class="lede">This section will grow as each public simulation is prepared, visualized, and documented. Early entries focus on reusable analysis scaffolds and chemistry-aware model preparation.</p>
     </section>
 
     <section class="callout">
-      <h2>How to read this portfolio</h2>
-      <p class="section-note">The emphasis is not only on code. Each repository is intended to show scientific judgment: how molecular data are structured, analyzed, documented, and translated into reproducible workflows.</p>
+      <h2>First public series</h2>
+      <p class="section-note">The first planned public share is a water-evaporation simulation: a compact demonstration of molecular motion, phase change, and trajectory analysis. Future entries will follow a similar format: visual output, short method summary, analysis notes, and reusable scripts where appropriate.</p>
     </section>
 
     <section class="project-list">
       <article class="project-card">
+        <h2>Water evaporation simulation</h2>
+        <p class="meta">Coming soon · molecular dynamics · visualization · analysis notes</p>
+        <p>Planned first public simulation series. The goal is to show evaporation behavior through molecular visualization and simple quantitative analysis, while keeping the workflow reproducible and understandable.</p>
+        <div class="chips">
+          <span class="chip">water</span>
+          <span class="chip">evaporation</span>
+          <span class="chip">molecular dynamics</span>
+          <span class="chip">visualization</span>
+        </div>
+      </article>
+
+      <article class="project-card">
         <h2><a href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a></h2>
-        <p class="meta">Python · MDAnalysis · Open Babel · portfolio-ready analysis scaffold</p>
-        <p>Lightweight computational chemistry utility repository containing MOL2 cleanup/charge comparison tools and molecular-simulation analysis templates. Current scaffold scripts include radial density analysis, radius-shell counts, and interfacial orientation metrics relative to a reference center of mass.</p>
-        <h3>What it demonstrates</h3>
-        <ul class="clean">
-          <li>Writing reusable command-line analysis scripts for molecular simulation data.</li>
-          <li>Documenting assumptions, data policy, and reproducibility practices.</li>
-          <li>Separating public scaffold code from unpublished production trajectories.</li>
-        </ul>
+        <p class="meta">Python · MDAnalysis · public analysis scaffold</p>
+        <p>Lightweight computational chemistry utility repository containing molecular-simulation analysis templates such as radial density, radius-shell counts, and interfacial orientation metrics.</p>
         <div class="chips">
           <span class="chip">trajectory analysis</span>
           <span class="chip">radial density</span>
@@ -56,14 +61,8 @@
 
       <article class="project-card">
         <h2><a href="https://github.com/senal-liyanage/polymer-tool">polymer-tool</a></h2>
-        <p class="meta">Python · RDKit · Packmol · polymer/nanoparticle preparation</p>
-        <p>A PLGA-first model-preparation workflow for chemically traceable polymer chain construction, nanoparticle seed packing, packing assessment, provenance, and downstream handoff bundles. The project demonstrates how chemistry-aware model-building workflows can be organized into a command-line and GUI-accessible tool.</p>
-        <h3>What it demonstrates</h3>
-        <ul class="clean">
-          <li>Designing a domain-specific workflow for polymer and nanoparticle model preparation.</li>
-          <li>Encoding chemistry choices such as composition, stereochemistry, termini, and packing constraints.</li>
-          <li>Building reproducible handoff outputs for downstream simulation workflows.</li>
-        </ul>
+        <p class="meta">Python · RDKit · Packmol · PLGA model preparation</p>
+        <p>PLGA-first model-preparation workflow for polymer chain construction, nanoparticle seed packing, packing assessment, provenance, and downstream handoff bundles.</p>
         <div class="chips">
           <span class="chip">PLGA</span>
           <span class="chip">nanoparticle setup</span>
@@ -77,14 +76,8 @@
 
       <article class="project-card">
         <h2><a href="https://github.com/senal-liyanage/qctddft">qctddft</a></h2>
-        <p class="meta">Python · Q-Chem · TDDFT · spectral-region analysis</p>
-        <p>A command-line toolkit for post-processing Q-Chem TDDFT calculations. The workflow extracts excitation data, builds broadened spectra, identifies spectral regions, assigns excited states, and clusters representative molecular structures for interpretation.</p>
-        <h3>What it demonstrates</h3>
-        <ul class="clean">
-          <li>Connecting quantum-chemical output files to interpretable spectral features.</li>
-          <li>Automating analysis across many calculated structures or snapshots.</li>
-          <li>Using clustering and region assignment to support chemical interpretation.</li>
-        </ul>
+        <p class="meta">Python · Q-Chem · TDDFT</p>
+        <p>Command-line toolkit for post-processing TDDFT calculations and connecting spectral features to molecular structures.</p>
         <div class="chips">
           <span class="chip">TDDFT</span>
           <span class="chip">Q-Chem</span>
@@ -95,31 +88,12 @@
           <a class="button small secondary" href="https://github.com/senal-liyanage/qctddft">Open repository</a>
         </div>
       </article>
-
-      <article class="project-card">
-        <h2><a href="https://github.com/senal-liyanage/AmberMD-Scripting">AmberMD-Scripting</a></h2>
-        <p class="meta">Shell scripting · AMBER · molecular dynamics setup</p>
-        <p>Shell-based utilities for AMBER molecular dynamics preparation and execution workflows. This repository supports the broader portfolio theme of reproducible, scriptable simulation setup.</p>
-        <h3>What it demonstrates</h3>
-        <ul class="clean">
-          <li>Using shell scripting to organize simulation setup and execution.</li>
-          <li>Supporting reproducible molecular dynamics workflows beyond a single software ecosystem.</li>
-        </ul>
-        <div class="chips">
-          <span class="chip">AMBER</span>
-          <span class="chip">Bash</span>
-          <span class="chip">simulation setup</span>
-        </div>
-        <div class="actions">
-          <a class="button small secondary" href="https://github.com/senal-liyanage/AmberMD-Scripting">Open repository</a>
-        </div>
-      </article>
     </section>
   </main>
 
   <footer>
     <div class="footer-inner">
-      © 2026 Senal Liyanage · <a href="index.html">Home</a> · <a href="contact.html">Contact</a>
+      © 2026 Senal Liyanage · <a href="index.html">Home</a> · <a href="contact.html">Links</a>
     </div>
   </footer>
 </body>
