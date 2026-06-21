@@ -11,7 +11,12 @@ The website is intended as a concise public landing page for simulation projects
 - `index.html` — landing page for the simulation portfolio
 - `projects.html` — public simulation projects, selected repositories, and protected-source project notes
 - `research.html` — research themes and portfolio-safe case-study style
+- `projects/water-vaporization/` — Project 001, a public-facing water vaporization simulation example
 - `assets/css/style.css` — shared site styling
+
+## Project 001
+
+**When Hydrogen Bonds Let Go** is a simulation-for-fun project showing molecular vaporization from a TIP4P/2005 water slab. The public website version includes an interactive browser animation and model-reliability note rather than raw trajectories or large rendered media.
 
 ## Public-content policy
 
