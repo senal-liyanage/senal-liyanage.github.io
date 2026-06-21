@@ -1,20 +1,19 @@
-# Senal Liyanage Portfolio Website
+# Senal Liyanage Molecular Simulation Portfolio
 
-This repository hosts the personal portfolio website for Senal Liyanage, focused on computational chemistry, molecular simulation, quantum-chemical analysis, and scientific computing.
+This repository hosts a public molecular simulation portfolio focused on computational chemistry, reproducible analysis workflows, and scientific visualization.
 
 ## Site purpose
 
-The website is intended to provide a concise public landing page for job applications, research networking, and portfolio review.
+The website is intended as a concise public landing page for simulation projects. The first public series is planned around water evaporation, followed by polymer nanoparticles, solvent/interface organization, and related computational chemistry workflows.
 
 ## Main sections
 
-- `index.html` — landing page and professional summary
-- `projects.html` — selected software and workflow projects
-- `research.html` — research focus and scientific case studies
-- `cv.html` — CV/resume links and technical skill summary
-- `contact.html` — professional links and contact information
+- `index.html` — landing page for the simulation portfolio
+- `projects.html` — public simulation projects and selected repositories
+- `research.html` — research themes and portfolio-safe case-study style
+- `contact.html` — public professional profile links
 - `assets/css/style.css` — shared site styling
 
-## Data and content policy
+## Public-content policy
 
-This repository should contain only public, approved, and non-sensitive content. Do not commit unpublished trajectories, collaborator-owned data, private manuscript files, credentials, or large simulation outputs.
+This repository should contain only public, approved, and non-sensitive content. Do not commit private resumes, unpublished trajectories, collaborator-owned data, private manuscript files, credentials, home addresses, phone numbers, immigration details, or large simulation outputs.
