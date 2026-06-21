@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Project 001: molecular dynamics visualization of water vaporization from a TIP4P/2005 slab simulation.">
+  <title>Project 001 — When Hydrogen Bonds Let Go</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="../../index.html">Senal Liyanage</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../projects.html">Projects</a>
+        <a href="../../research.html">Research</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-compact project-hero">
+      <p class="eyebrow">Project 001 · simulation for fun</p>
+      <h1>When Hydrogen Bonds Let Go</h1>
+      <p class="lede">A molecular-dynamics demonstration of water vaporization from a finite TIP4P/2005 liquid slab. The goal is to make a familiar phenomenon visible at the molecular scale while staying honest about model assumptions.</p>
+      <div class="chips">
+        <span class="chip">water</span>
+        <span class="chip">TIP4P/2005</span>
+        <span class="chip">OpenMM</span>
+        <span class="chip">NVT slab</span>
+        <span class="chip">vaporization</span>
+      </div>
+    </section>
+
+    <section class="callout">
+      <h2>What this shows</h2>
+      <p class="section-note">At low temperature, water remains as a compact liquid slab. As temperature increases, the slab interface broadens and more molecules occupy the vapor region. The browser animation below is a public-facing schematic driven by the simulation summary: blue points represent waters in the original liquid-slab band, and orange points represent waters outside that band.</p>
+    </section>
+
+    <section class="media-panel">
+      <div class="canvas-wrap">
+        <canvas id="evapCanvas" width="640" height="820" aria-label="Animated schematic of 600 K water slab vaporization"></canvas>
+      </div>
+      <aside class="card media-caption">
+        <h2>600 K particle story</h2>
+        <p>Blue points remain inside the original liquid-slab band. Orange points are outside the original band, representing molecules in the vapor/diffuse region.</p>
+        <p class="meta">The dashed lines mark the original liquid-slab boundaries. The counter uses the measured outside-band population from the MD analysis.</p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Temperature-dependent behavior</h2>
+      <div class="metrics-grid">
+        <article class="metric-card"><span class="metric-value">0.5</span><span class="metric-label">mean outside-band waters at 300 K</span></article>
+        <article class="metric-card"><span class="metric-value">1.6</span><span class="metric-label">mean outside-band waters at 373 K</span></article>
+        <article class="metric-card"><span class="metric-value">22.3</span><span class="metric-label">mean outside-band waters at 450 K</span></article>
+        <article class="metric-card"><span class="metric-value">565</span><span class="metric-label">mean outside-band waters at 600 K</span></article>
+      </div>
+      <p class="section-note">The outside-band count increases sharply at high temperature, matching the density-profile result: the 600 K slab no longer behaves like a compact liquid slab and becomes a broad liquid–vapor distribution.</p>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <h2>System and method</h2>
+        <ul class="clean">
+          <li><strong>Water model:</strong> TIP4P/2005</li>
+          <li><strong>Engine:</strong> OpenMM</li>
+          <li><strong>Geometry:</strong> liquid slab with vapor space along z</li>
+          <li><strong>Box:</strong> 4 × 4 × 12 nm³</li>
+          <li><strong>Ensemble:</strong> NVT</li>
+          <li><strong>Temperatures:</strong> 300, 373, 450, and 600 K</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Model reliability note</h2>
+        <p>This is a qualitative visualization of molecular vaporization from a finite periodic slab. It is not a precision boiling-point, vapor-pressure, or surface-tension calculation. A nanoscale NVT slab does not behave exactly like a macroscopic pot of water at 1 atm.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>How to read this project</h2>
+      <p>The important result is not that the 600 K movie is a literal picture of kitchen boiling. The useful idea is simpler and more visual: heating increases molecular motion, the liquid slab becomes less compact, and water molecules increasingly occupy the vapor region.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      © 2026 Senal Liyanage · <a href="../../index.html">Home</a> · <a href="../../projects.html">Projects</a> · <a href="https://github.com/senal-liyanage">GitHub</a>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  const canvas = document.getElementById('evapCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width;
+  const H = canvas.height;
+  const plot = {x: 105, y: 70, w: 420, h: 640};
+  const xMax = 4.0;
+  const yMax = 12.0;
+  const yLo = 2.5;
+  const yHi = 6.5;
+  const n = 900;
+  const counts = [3, 211, 360, 425, 510, 470, 520, 490, 560, 600, 540, 575, 635, 555, 590, 680, 685, 720, 775, 735, 760, 805, 780];
+  let seed = 12345;
+  function rand() { seed = (1664525 * seed + 1013904223) >>> 0; return seed / 4294967296; }
+  const particles = Array.from({length:n}, () => ({
+    x: rand() * xMax,
+    y: yLo + rand() * (yHi - yLo),
+    drift: (rand() - 0.5) * 0.04,
+    phase: rand() * Math.PI * 2,
+    outsideBias: rand()
+  }));
+  function sx(x) { return plot.x + x / xMax * plot.w; }
+  function sy(y) { return plot.y + plot.h - y / yMax * plot.h; }
+  function drawFrame(frame) {
+    const t = frame / 160;
+    const idx = Math.min(counts.length - 1, Math.floor(t * (counts.length - 1)));
+    const frac = t * (counts.length - 1) - idx;
+    const count = Math.round(counts[idx] * (1 - frac) + counts[Math.min(counts.length - 1, idx + 1)] * frac);
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#172033';
+    ctx.font = '24px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('600 K water slab: molecular evaporation', W / 2, 34);
+    ctx.strokeStyle = '#172033'; ctx.lineWidth = 1.2; ctx.strokeRect(plot.x, plot.y, plot.w, plot.h);
+    ctx.fillStyle = 'rgba(39,94,254,0.08)';
+    ctx.fillRect(plot.x, sy(yHi), plot.w, sy(yLo) - sy(yHi));
+    ctx.setLineDash([8, 6]); ctx.strokeStyle = '#1f77b4'; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(plot.x, sy(yLo)); ctx.lineTo(plot.x + plot.w, sy(yLo)); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(plot.x, sy(yHi)); ctx.lineTo(plot.x + plot.w, sy(yHi)); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#172033'; ctx.font = '15px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif'; ctx.textAlign = 'left';
+    ctx.fillText('dashed lines = original liquid band', plot.x + 16, plot.y + 28);
+    ctx.fillText('blue = inside   orange = outside', plot.x + 16, plot.y + 58);
+    ctx.save(); ctx.translate(35, plot.y + plot.h/2); ctx.rotate(-Math.PI/2); ctx.textAlign = 'center'; ctx.font = '17px sans-serif'; ctx.fillText('vertical vapor direction (nm)', 0, 0); ctx.restore();
+    ctx.textAlign = 'center'; ctx.font = '17px sans-serif'; ctx.fillText('horizontal position (nm)', plot.x + plot.w/2, plot.y + plot.h + 46);
+    const outsideThreshold = count / n;
+    for (let i = 0; i < n; i++) {
+      const p = particles[i];
+      const outside = p.outsideBias < outsideThreshold;
+      let y = p.y + Math.sin(frame * 0.05 + p.phase) * 0.08;
+      if (outside) {
+        const direction = (i % 2 === 0) ? 1 : -1;
+        y += direction * (0.5 + 4.5 * t * p.outsideBias + 0.5 * Math.sin(frame * 0.07 + p.phase));
+        y = Math.max(0.25, Math.min(11.75, y));
+      }
+      let x = (p.x + p.drift * frame + xMax) % xMax;
+      ctx.beginPath();
+      ctx.arc(sx(x), sy(y), outside ? 3.6 : 2.6, 0, Math.PI * 2);
+      ctx.fillStyle = outside ? 'rgba(217,95,2,0.85)' : 'rgba(31,119,180,0.42)';
+      ctx.fill();
+    }
+    ctx.fillStyle = '#172033'; ctx.font = '19px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(`time ≈ ${Math.round(t * 2100)} ps     waters outside original slab band: ${count}`, W/2, H - 38);
+  }
+  let frame = 0;
+  function loop() { drawFrame(frame); frame = (frame + 1) % 161; requestAnimationFrame(loop); }
+  loop();
+})();
+</script>
+</body>
+</html>
