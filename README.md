@@ -1,17 +1,16 @@
 # Senal Liyanage Molecular Simulation Portfolio
 
-This repository hosts a public molecular simulation portfolio focused on computational chemistry, reproducible analysis workflows, and scientific visualization.
+This repository hosts a public molecular simulation portfolio focused on computational chemistry, reproducible analysis workflows, scientific visualization, and portfolio-safe notes for ongoing work.
 
 ## Site purpose
 
-The website is intended as a concise public landing page for simulation projects. The first public series is planned around water evaporation, followed by polymer nanoparticles, solvent/interface organization, and related computational chemistry workflows.
+The website is intended as a concise public landing page for simulation projects, selected repositories, research themes, and protected-source project notes. It highlights public examples while keeping unpublished data, collaborator-owned materials, and publication-sensitive source code outside the public site.
 
 ## Main sections
 
 - `index.html` — landing page for the simulation portfolio
-- `projects.html` — public simulation projects and selected repositories
+- `projects.html` — public simulation projects, selected repositories, and protected-source project notes
 - `research.html` — research themes and portfolio-safe case-study style
-- `contact.html` — public professional profile links
 - `assets/css/style.css` — shared site styling
 
 ## Public-content policy
