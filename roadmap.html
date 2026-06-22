@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Roadmap for cool-science molecular simulation phenomena by Senal Liyanage.">
+  <title>Roadmap | Senal Liyanage</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="index.html">Senal Liyanage</a>
+      <nav aria-label="Primary navigation">
+        <a href="projects.html">Projects</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="research.html">Research</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-compact">
+      <p class="eyebrow">Cool-science simulation roadmap</p>
+      <h1>Physical and chemical phenomena made visible with simulation.</h1>
+      <p class="lede">This roadmap organizes the portfolio around phenomena: phase changes, dissolution, self-assembly, interfacial behavior, polymer motion, and biomolecular dynamics. Each project should be visually engaging, reproducible, and honest about model limits.</p>
+    </section>
+
+    <section class="roadmap-grid">
+      <article class="roadmap-card complete">
+        <p class="status-label">Complete</p>
+        <h2><a href="projects/water-vaporization/">001 — When Hydrogen Bonds Let Go</a></h2>
+        <p class="meta">Water vaporization · TIP4P/2005 · OpenMM · finite NVT slab</p>
+        <p>Shows how heating broadens a liquid slab and increases the population of water molecules outside the original slab band.</p>
+      </article>
+
+      <article class="roadmap-card next">
+        <p class="status-label">Next build</p>
+        <h2>002 — When a Crystal Meets Water</h2>
+        <p class="meta">Salt dissolution · NaCl nanocrystal · hydration shells</p>
+        <p>Visualize ions leaving a small NaCl crystal and becoming hydrated by surrounding water molecules.</p>
+      </article>
+
+      <article class="roadmap-card planned">
+        <p class="status-label">Planned</p>
+        <h2>003 — Why Oil and Water Separate</h2>
+        <p class="meta">Hydrophobic phase separation · polarity · liquid mixtures</p>
+        <p>Show how polar and nonpolar molecules reorganize into separate regions instead of mixing uniformly.</p>
+      </article>
+
+      <article class="roadmap-card planned">
+        <p class="status-label">Planned</p>
+        <h2>004 — Molecules That Choose the Interface</h2>
+        <p class="meta">Surfactants · amphiphiles · self-organization</p>
+        <p>Track amphiphilic molecules as they orient at a water/oil or water/vapor interface.</p>
+      </article>
+
+      <article class="roadmap-card planned">
+        <p class="status-label">Planned</p>
+        <h2>005 — A Polymer Learns to Curl Up</h2>
+        <p class="meta">Polymer collapse · solvent quality · soft matter</p>
+        <p>Use a simple polymer chain to show coil-to-globule behavior and connect to later PLGA nanoparticle work.</p>
+      </article>
+
+      <article class="roadmap-card planned">
+        <p class="status-label">Planned</p>
+        <h2>006 — Proteins Are Not Statues</h2>
+        <p class="meta">Protein breathing · thermal motion · biomolecular dynamics</p>
+        <p>Show low-amplitude structural fluctuations that make protein structures dynamic rather than rigid.</p>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="card">
+        <h2>Selection rules</h2>
+        <ul class="clean">
+          <li>The phenomenon should be visually understandable within a short animation.</li>
+          <li>The model should be defensible enough for public explanation.</li>
+          <li>The page should include a clear “can and cannot claim” note.</li>
+          <li>The workflow should be reproducible without exposing private research data.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Standard project structure</h2>
+        <ul class="clean">
+          <li>Question: what are we trying to see?</li>
+          <li>Model: what force field and engine were used?</li>
+          <li>Visual: what is the public-facing animation?</li>
+          <li>Analysis: what simple metric supports the story?</li>
+          <li>Boundary: what should not be overclaimed?</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      © 2026 Senal Liyanage · <a href="index.html">Home</a> · <a href="projects.html">Projects</a> · <a href="https://github.com/senal-liyanage">GitHub</a>
+    </div>
+  </footer>
+</body>
+</html>
