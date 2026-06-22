@@ -19,58 +19,58 @@
   </header>
 
   <main>
-    <section class="hero hero-simple">
-      <p class="eyebrow">Computational chemistry in motion</p>
-      <h1>Small molecular worlds, made visible.</h1>
-      <p class="lede">I use molecular simulations to turn chemistry into motion: evaporation, interfaces, binding, organization, and other phenomena that are easier to understand when you can see them.</p>
-      <div class="actions">
-        <a class="button" href="projects.html">View projects</a>
-        <a class="button secondary" href="projects/water-vaporization/">Latest project</a>
-      </div>
-    </section>
-
-    <section class="spotlight">
+    <section class="hero home-hero">
       <div>
-        <p class="eyebrow">Latest project</p>
-        <h2><a href="projects/water-vaporization/">Project 001 — When Hydrogen Bonds Let Go</a></h2>
-        <p>I started with water because it is familiar, but still beautiful at the molecular scale. In this simulation, water molecules leave a heated slab and spread into the vapor space.</p>
+        <p class="eyebrow">Computational chemistry in motion</p>
+        <h1>Small molecular worlds, made visible.</h1>
+        <p class="lede">I use molecular simulations to study chemistry through motion: molecules evaporating, interfaces forming, structures organizing, and interactions taking shape.</p>
+        <div class="actions">
+          <a class="button" href="projects/water-vaporization/">Watch Project 001</a>
+          <a class="button secondary" href="projects.html">View all projects</a>
+        </div>
       </div>
-      <a class="button small" href="projects/water-vaporization/">Open project</a>
+      <a class="hero-visual" href="projects/water-vaporization/" aria-label="Open Project 001 — When Hydrogen Bonds Let Go">
+        <div class="visual-label">Project 001</div>
+        <div class="molecule-preview" aria-hidden="true">
+          <span class="band"></span>
+          <span class="dot blue" style="left:18%; top:49%"></span>
+          <span class="dot blue" style="left:28%; top:55%"></span>
+          <span class="dot blue" style="left:39%; top:45%"></span>
+          <span class="dot blue" style="left:52%; top:51%"></span>
+          <span class="dot blue" style="left:65%; top:57%"></span>
+          <span class="dot blue" style="left:77%; top:47%"></span>
+          <span class="dot orange" style="left:23%; top:24%"></span>
+          <span class="dot orange" style="left:47%; top:17%"></span>
+          <span class="dot orange" style="left:72%; top:28%"></span>
+          <span class="dot orange" style="left:32%; top:78%"></span>
+          <span class="dot orange" style="left:58%; top:84%"></span>
+          <span class="dot orange" style="left:83%; top:72%"></span>
+        </div>
+        <div class="visual-copy">
+          <h2>When Hydrogen Bonds Let Go</h2>
+          <p>Water molecules leave a heated slab and move into the vapor space.</p>
+        </div>
+      </a>
     </section>
 
-    <section>
-      <h2>What I want this portfolio to show</h2>
-      <div class="gallery-grid">
-        <article class="card">
-          <h3>Phenomena first</h3>
-          <p>I want each project to start with a visual question: what is happening, and what does molecular motion look like?</p>
-        </article>
-        <article class="card">
-          <h3>Chemistry-aware visuals</h3>
-          <p>The visuals should be simple, but not empty. I include enough chemistry to explain what is moving, changing, or interacting.</p>
-        </article>
-        <article class="card">
-          <h3>Readable methods</h3>
-          <p>The method details are there for context, but they should support the visual story rather than turn the page into a report.</p>
-        </article>
-      </div>
+    <section class="project-strip">
+      <article>
+        <h2><a href="projects/water-vaporization/">Water vaporization</a></h2>
+        <p>I started with a familiar molecule and a simple visual question: what does evaporation look like at the molecular scale?</p>
+      </article>
+      <article>
+        <h2><a href="research.html">Research themes</a></h2>
+        <p>Future pages will move through polymer interfaces, nanoparticle hydration, molecular recognition, and electronic-structure visuals.</p>
+      </article>
     </section>
 
-    <section>
-      <h2>Tools behind the scenes</h2>
-      <div class="project-list compact-list">
-        <article class="project-card">
-          <h3><a href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a></h3>
-          <p>Python templates I use for molecular-simulation analysis and figure-ready summaries.</p>
-        </article>
-        <article class="project-card">
-          <h3>polymer/nanoparticle workflow</h3>
-          <p>Model-preparation and simulation-handoff work that supports future PLGA and soft-material projects.</p>
-        </article>
-        <article class="project-card">
-          <h3><a href="https://github.com/senal-liyanage/qctddft">qctddft</a></h3>
-          <p>TDDFT post-processing tools for connecting spectra and molecular structure.</p>
-        </article>
+    <section class="quiet-tools">
+      <h2>Tools and code</h2>
+      <p>Most pages will stay visual, but I also keep selected analysis and workflow code available through GitHub.</p>
+      <div class="actions">
+        <a class="button small secondary" href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a>
+        <a class="button small secondary" href="https://github.com/senal-liyanage/qctddft">qctddft</a>
+        <a class="button small secondary" href="https://github.com/senal-liyanage">GitHub profile</a>
       </div>
     </section>
   </main>
