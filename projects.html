@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Selected molecular simulation and computational chemistry projects by Senal Liyanage.">
+  <meta name="description" content="Visual molecular simulation projects by Senal Liyanage.">
   <title>Projects | Senal Liyanage</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -20,76 +20,53 @@
 
   <main>
     <section class="hero hero-compact">
-      <p class="eyebrow">Projects</p>
-      <h1>Simulation work, analysis code, and reproducible workflow notes.</h1>
-      <p class="lede">This section organizes public molecular simulation examples, reusable analysis scaffolds, and chemistry-aware model-preparation notes. Some ongoing work is summarized publicly while source code remains private until publication-sensitive boundaries are resolved.</p>
-    </section>
-
-    <section class="callout">
-      <h2>First simulation series: water evaporation</h2>
-      <p class="section-note">The first public focus is a water-vaporization simulation: a compact demonstration of molecular motion, phase behavior, trajectory visualization, and simple analysis.</p>
-      <div class="actions">
-        <a class="button small" href="projects/water-vaporization/">Open Project 001</a>
-      </div>
+      <p class="eyebrow">Simulation gallery</p>
+      <h1>Visual projects from molecular simulations.</h1>
+      <p class="lede">Short, visual case studies built around animations, figures, and simple chemistry stories.</p>
     </section>
 
     <section class="project-list">
-      <article class="project-card featured-project">
-        <h2><a href="projects/water-vaporization/">Project 001 — When Hydrogen Bonds Let Go</a></h2>
-        <p class="meta">TIP4P/2005 water · OpenMM · slab vaporization · public animation</p>
-        <p>A simulation-for-fun project that visualizes water vaporization from a finite molecular slab and explains the result with clear model boundaries.</p>
+      <article class="project-card featured-project visual-card">
+        <p class="eyebrow">Project 001</p>
+        <h2><a href="projects/water-vaporization/">When Hydrogen Bonds Let Go</a></h2>
+        <p class="meta">Water vaporization · OpenMM · animation-first project</p>
+        <p>Heating a water slab until molecules break away into the vapor space. This is the first entry in the visual simulation series.</p>
         <div class="chips">
           <span class="chip">water</span>
           <span class="chip">vaporization</span>
-          <span class="chip">molecular dynamics</span>
-          <span class="chip">visualization</span>
-          <span class="chip">model reliability</span>
+          <span class="chip">molecular motion</span>
+          <span class="chip">animation</span>
         </div>
         <div class="actions">
-          <a class="button small" href="projects/water-vaporization/">View project page</a>
+          <a class="button small" href="projects/water-vaporization/">View project</a>
         </div>
       </article>
 
       <article class="project-card">
-        <h2><a href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a></h2>
-        <p class="meta">Python · MDAnalysis · public analysis scaffold</p>
-        <p>Lightweight computational chemistry utility repository containing molecular-simulation analysis templates such as radial density, radius-shell counts, and interfacial orientation metrics.</p>
-        <div class="chips">
-          <span class="chip">trajectory analysis</span>
-          <span class="chip">radial density</span>
-          <span class="chip">hydration counts</span>
-          <span class="chip">orientation metrics</span>
-        </div>
-        <div class="actions">
-          <a class="button small secondary" href="https://github.com/senal-liyanage/chemistry-analysis-tools">Open repository</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <h2>Polymer/nanoparticle model-preparation workflow</h2>
-        <p class="meta">Python · RDKit · Packmol · PLGA model preparation · protected-source work</p>
-        <p>Ongoing PLGA-first workflow for polymer chain construction, nanoparticle seed packing, packing assessment, provenance, and downstream simulation handoff. The source repository is private while related research and publication-sensitive implementation details are being finalized.</p>
-        <div class="chips">
-          <span class="chip">PLGA</span>
-          <span class="chip">nanoparticle setup</span>
-          <span class="chip">Packmol</span>
-          <span class="chip">workflow design</span>
-          <span class="chip">protected source</span>
+        <h2>Upcoming visual directions</h2>
+        <div class="gallery-grid">
+          <div>
+            <h3>Polymer nanoparticles</h3>
+            <p>PLGA particles, hydration, interfaces, and solvent organization.</p>
+          </div>
+          <div>
+            <h3>Ionic-liquid interfaces</h3>
+            <p>Ion localization, water displacement, and interfacial organization.</p>
+          </div>
+          <div>
+            <h3>Binding and molecular recognition</h3>
+            <p>Docking, contact maps, and molecular interaction snapshots.</p>
+          </div>
         </div>
       </article>
 
-      <article class="project-card">
-        <h2><a href="https://github.com/senal-liyanage/qctddft">qctddft</a></h2>
-        <p class="meta">Python · Q-Chem · TDDFT</p>
-        <p>Command-line toolkit for post-processing TDDFT calculations and connecting spectral features to molecular structures.</p>
-        <div class="chips">
-          <span class="chip">TDDFT</span>
-          <span class="chip">Q-Chem</span>
-          <span class="chip">spectral analysis</span>
-          <span class="chip">clustering</span>
-        </div>
+      <article class="project-card compact-list-card">
+        <h2>Code and workflow repositories</h2>
+        <p>These repositories support the analysis and preparation work behind the visual projects.</p>
         <div class="actions">
-          <a class="button small secondary" href="https://github.com/senal-liyanage/qctddft">Open repository</a>
+          <a class="button small secondary" href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a>
+          <a class="button small secondary" href="https://github.com/senal-liyanage/qctddft">qctddft</a>
+          <a class="button small secondary" href="https://github.com/senal-liyanage">GitHub profile</a>
         </div>
       </article>
     </section>
