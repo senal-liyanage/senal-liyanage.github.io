@@ -20,16 +20,9 @@
 
   <main>
     <section class="hero hero-compact project-hero">
-      <p class="eyebrow">Project 001 · simulation for fun</p>
+      <p class="eyebrow">Project 001</p>
       <h1>When Hydrogen Bonds Let Go</h1>
-      <p class="lede">A visual molecular-dynamics demonstration of water molecules leaving a heated liquid slab.</p>
-      <div class="chips">
-        <span class="chip">water</span>
-        <span class="chip">TIP4P/2005</span>
-        <span class="chip">OpenMM</span>
-        <span class="chip">vaporization</span>
-        <span class="chip">animation</span>
-      </div>
+      <p class="lede">I wanted to start this portfolio with something familiar but still molecular: water molecules leaving a heated liquid slab.</p>
     </section>
 
     <section class="visual-stage">
@@ -41,7 +34,7 @@
           <h2>What to watch</h2>
           <p>Blue molecules stay near the original liquid slab. Orange molecules move into the vapor space as the slab becomes more diffuse.</p>
         </div>
-        <div class="mini-note">This is a visual science demo, not a precision boiling-point calculation.</div>
+        <div class="mini-note">I treat this as a visual science demo, not a precision boiling-point calculation.</div>
       </div>
     </section>
 
@@ -50,11 +43,11 @@
       <div class="gallery-grid">
         <article class="card">
           <h3>Liquid band</h3>
-          <p>At the start, most molecules sit in a compact slab.</p>
+          <p>Most molecules begin in a compact slab.</p>
         </article>
         <article class="card">
           <h3>Interface loosens</h3>
-          <p>Heating increases motion and makes the slab boundary less sharp.</p>
+          <p>Heating increases molecular motion and makes the slab boundary less sharp.</p>
         </article>
         <article class="card">
           <h3>Molecules escape</h3>
@@ -65,23 +58,13 @@
 
     <section class="grid-2">
       <article class="card">
-        <h2>Simulation setup</h2>
-        <p>TIP4P/2005 water was simulated with OpenMM in a finite slab geometry with vapor space along the vertical direction.</p>
-        <div class="chips">
-          <span class="chip">4 × 4 × 12 nm³ box</span>
-          <span class="chip">NVT</span>
-          <span class="chip">300–600 K</span>
-        </div>
+        <h2>How I made it</h2>
+        <p>I simulated a TIP4P/2005 water slab in OpenMM using a finite box with vapor space along the vertical direction. The system was heated across several temperatures, and the animation focuses on the high-temperature case where the vapor region is easiest to see.</p>
       </article>
       <article class="card">
         <h2>Model note</h2>
-        <p>A nanoscale slab is not the same as a macroscopic pot of water. The point here is to visualize molecular motion and phase-like behavior, not to report vapor pressure or boiling thermodynamics.</p>
+        <p>A nanoscale simulation slab is not the same as a macroscopic pot of boiling water. I use this project to show molecular motion and phase-like behavior, not to claim a measured boiling point or vapor pressure.</p>
       </article>
-    </section>
-
-    <section>
-      <h2>Why this belongs in the portfolio</h2>
-      <p class="section-note">This project sets the style for the portfolio: visual first, chemically honest, and readable by someone who wants to see what molecular simulation can reveal without reading a full research paper.</p>
     </section>
   </main>
 
