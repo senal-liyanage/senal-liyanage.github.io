@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Senal Liyanage — molecular simulation portfolio for computational chemistry, reproducible scientific workflows, and soft-material systems.">
+  <meta name="description" content="Senal Liyanage — molecular simulation portfolio for visual computational chemistry and science phenomena.">
   <title>Senal Liyanage | Molecular Simulation Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -19,71 +19,63 @@
   </header>
 
   <main>
-    <section class="hero hero-grid">
+    <section class="hero hero-simple">
+      <p class="eyebrow">Computational chemistry in motion</p>
+      <h1>Small molecular worlds, made visible.</h1>
+      <p class="lede">A visual portfolio of molecular simulations, animations, and figures that turn chemistry phenomena into something you can watch.</p>
+      <div class="actions">
+        <a class="button" href="projects.html">View simulation gallery</a>
+        <a class="button secondary" href="projects/water-vaporization/">Latest project</a>
+      </div>
+    </section>
+
+    <section class="spotlight">
       <div>
-        <p class="eyebrow">Molecular simulation portfolio</p>
-        <h1>Visual, reproducible simulations of molecular systems.</h1>
-        <p class="lede">This site collects public-facing molecular simulation projects, analysis workflows, and scientific visuals. The focus is computational chemistry, reproducible scientific computing, and portfolio-safe project notes for ongoing work.</p>
-        <div class="actions">
-          <a class="button" href="projects.html">View projects</a>
-          <a class="button secondary" href="research.html">Research themes</a>
+        <p class="eyebrow">Featured simulation</p>
+        <h2><a href="projects/water-vaporization/">Project 001 — When Hydrogen Bonds Let Go</a></h2>
+        <p>Water molecules leave a heated slab and spread into the vapor space. The goal is simple: make molecular motion visible, interpretable, and fun.</p>
+        <div class="chips">
+          <span class="chip">water</span>
+          <span class="chip">vaporization</span>
+          <span class="chip">animation</span>
+          <span class="chip">OpenMM</span>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Portfolio snapshot">
-        <h2>Portfolio snapshot</h2>
-        <dl>
-          <dt>Systems</dt>
-          <dd>Water, polymers, nanoparticles, ionic-liquid interfaces, biomolecules</dd>
-          <dt>Focus</dt>
-          <dd>Simulation setup, analysis, visualization, and reproducible handoff</dd>
-          <dt>Workflow</dt>
-          <dd>Python/Bash, MD simulation, HPC, documentation</dd>
-          <dt>Public boundary</dt>
-          <dd>Approved examples and protected-source project notes</dd>
-        </dl>
-      </aside>
+      <a class="button small" href="projects/water-vaporization/">Open project</a>
     </section>
 
     <section>
-      <h2>Current focus</h2>
-      <div class="grid">
+      <h2>What this portfolio will show</h2>
+      <div class="gallery-grid">
         <article class="card">
-          <h3><a href="projects/water-vaporization/">Water vaporization</a></h3>
-          <p>Molecular dynamics visualization and analysis of vaporization from a TIP4P/2005 water slab, designed as a clear first public example of simulation-driven interpretation.</p>
+          <h3>Phenomena first</h3>
+          <p>Evaporation, interfaces, aggregation, diffusion, binding, and molecular organization shown through animations and figures.</p>
         </article>
         <article class="card">
-          <h3>Polymer nanoparticles</h3>
-          <p>Atomistic models and analysis workflows for PLGA nanoparticle structure, hydration, and solvent-accessible interfacial organization.</p>
+          <h3>Chemistry-aware visuals</h3>
+          <p>Each project gives just enough molecular context to understand what is moving, changing, or interacting.</p>
         </article>
         <article class="card">
-          <h3>Scientific workflows</h3>
-          <p>Readable scripts, reproducible analysis notes, and clean documentation for molecular simulation and computational chemistry projects.</p>
+          <h3>Reproducible enough</h3>
+          <p>Methods are included, but the page stays readable. Technical details support the visual story instead of overwhelming it.</p>
         </article>
       </div>
     </section>
 
     <section>
-      <h2>Selected repositories and project notes</h2>
-      <div class="project-list">
-        <article class="project-card featured-project">
-          <h3><a href="projects/water-vaporization/">Project 001 — When Hydrogen Bonds Let Go</a></h3>
-          <p class="meta">OpenMM · TIP4P/2005 water · finite NVT slab · public visualization</p>
-          <p>A simulation-for-fun project showing molecular vaporization from a water slab with a browser-based particle animation and model-reliability notes.</p>
-        </article>
+      <h2>Tools behind the scenes</h2>
+      <div class="project-list compact-list">
         <article class="project-card">
           <h3><a href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a></h3>
-          <p class="meta">Python · MDAnalysis · molecular simulation analysis</p>
-          <p>Public scaffold for chemistry data handling and molecular-simulation analysis templates.</p>
+          <p>Python templates for molecular-simulation analysis and figure-ready summaries.</p>
         </article>
         <article class="project-card">
           <h3>polymer/nanoparticle workflow</h3>
-          <p class="meta">Python · RDKit · Packmol · PLGA model preparation · ongoing protected-source work</p>
-          <p>Ongoing PLGA-focused workflow for polymer chain construction, nanoparticle seed packing, quality-control reporting, provenance, and downstream simulation handoff. Source code is private while related work is under publication preparation.</p>
+          <p>PLGA-focused model preparation and simulation handoff work used to support future visual case studies.</p>
         </article>
         <article class="project-card">
           <h3><a href="https://github.com/senal-liyanage/qctddft">qctddft</a></h3>
-          <p class="meta">Python · Q-Chem · TDDFT</p>
-          <p>Command-line toolkit for post-processing TDDFT calculations and connecting spectral features to molecular structures.</p>
+          <p>TDDFT post-processing tools for connecting spectra and molecular structure.</p>
         </article>
       </div>
     </section>
