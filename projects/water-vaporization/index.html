@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Project 001: visual molecular dynamics simulation of water vaporization from a TIP4P/2005 slab.">
+  <meta name="description" content="Project 001: visual molecular dynamics demonstration of water molecules leaving a heated slab.">
   <title>Project 001 — When Hydrogen Bonds Let Go</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
@@ -22,24 +22,24 @@
     <section class="hero hero-compact project-hero">
       <p class="eyebrow">Project 001</p>
       <h1>When Hydrogen Bonds Let Go</h1>
-      <p class="lede">I wanted to start this portfolio with something familiar but still molecular: water molecules leaving a heated liquid slab.</p>
+      <p class="lede">I started with something familiar but still molecular: water molecules leaving a heated liquid slab.</p>
     </section>
 
     <section class="visual-stage">
       <div class="canvas-wrap cinematic-canvas">
-        <canvas id="evapCanvas" width="800" height="700" aria-label="Animated schematic of hot water slab vaporization"></canvas>
+        <canvas id="evapCanvas" width="800" height="700" aria-label="Animated visual demonstration of hot water slab vaporization"></canvas>
       </div>
       <div class="watch-strip">
         <div>
           <h2>What to watch</h2>
           <p>Blue molecules stay near the original liquid slab. Orange molecules move into the vapor space as the slab becomes more diffuse.</p>
         </div>
-        <div class="mini-note">I treat this as a visual science demo, not a precision boiling-point calculation.</div>
+        <div class="mini-note">A visual demonstration of molecular motion, not a precision boiling-point calculation.</div>
       </div>
     </section>
 
     <section>
-      <h2>The story in three frames</h2>
+      <h2>The molecular story</h2>
       <div class="gallery-grid">
         <article class="card">
           <h3>Liquid band</h3>
@@ -59,11 +59,11 @@
     <section class="grid-2">
       <article class="card">
         <h2>How I made it</h2>
-        <p>I simulated a TIP4P/2005 water slab in OpenMM using a finite box with vapor space along the vertical direction. The system was heated across several temperatures, and the animation focuses on the high-temperature case where the vapor region is easiest to see.</p>
+        <p>I simulated a TIP4P/2005 water slab in OpenMM using a finite box with vapor space along the vertical direction. The animation focuses on the high-temperature case where the vapor region is easiest to see.</p>
       </article>
       <article class="card">
         <h2>Model note</h2>
-        <p>A nanoscale simulation slab is not the same as a macroscopic pot of boiling water. I use this project to show molecular motion and phase-like behavior, not to claim a measured boiling point or vapor pressure.</p>
+        <p>A nanoscale simulation slab is not the same as a macroscopic pot of boiling water. I use this project to show molecular motion and phase-like behavior, not to report a measured boiling point or vapor pressure.</p>
       </article>
     </section>
   </main>
