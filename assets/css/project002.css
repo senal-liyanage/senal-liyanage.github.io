@@ -18,11 +18,17 @@
   display: block;
   width: 100%;
   max-width: 920px;
+  max-height: min(78vh, 900px);
+  height: auto;
   margin: 0 auto;
   border-radius: 24px;
   border: 1px solid var(--line);
   background: #ffffff;
   box-shadow: 0 18px 44px rgba(21, 31, 56, 0.08);
+}
+
+.real-media-stage .watch-strip {
+  margin-top: 1rem;
 }
 
 .wide-figure {
@@ -32,6 +38,10 @@
   border: 1px solid var(--line);
   background: #ffffff;
   box-shadow: 0 12px 30px rgba(21, 31, 56, 0.05);
+}
+
+.frame-gallery {
+  margin-top: 1rem;
 }
 
 .frame-gallery img {
@@ -95,5 +105,9 @@
 @media (max-width: 860px) {
   .dissolution-summary {
     grid-template-columns: 1fr;
+  }
+
+  .simulation-video {
+    max-height: none;
   }
 }
