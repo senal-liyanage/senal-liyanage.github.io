@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Project 002: an interactive molecular simulation story of salt dissolving in water.">
+  <meta name="description" content="Project 002: real molecular simulation media showing a nanoscale salt cluster eroding in water.">
   <title>Project 002 — When a Crystal Meets Water</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../../assets/css/project002.css">
@@ -26,62 +26,50 @@
       <p class="lede">I wanted to show a familiar chemical event at molecular scale: an ordered salt cluster beginning to erode as water surrounds individual ions.</p>
     </section>
 
-    <section class="interactive-stage salt-stage">
-      <div class="stage-card">
-        <canvas id="saltCanvas" width="980" height="660" aria-label="Interactive animation of salt ions leaving a crystal-like cluster in water"></canvas>
-        <div class="stage-controls">
-          <button class="button small" id="playPause" type="button">Pause</button>
-          <label for="timeSlider">scrub the simulation</label>
-          <input id="timeSlider" type="range" min="0" max="100" value="0">
+    <section class="real-media-stage">
+      <video class="simulation-video" autoplay loop muted playsinline controls poster="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution_poster.png">
+        <source src="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution.mp4" type="video/mp4">
+        <source src="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+      <div class="watch-strip">
+        <div>
+          <h2>What to watch</h2>
+          <p>The ordered salt cluster does not disappear at once. The surface becomes rougher as individual ions leave the connected lattice and become hydrated.</p>
         </div>
+        <div class="mini-note">Real simulation media from a 300 K NaCl-in-water run.</div>
       </div>
-      <aside class="story-panel">
-        <p class="eyebrow">What to watch</p>
-        <h2>Ions leave the ordered cluster</h2>
-        <p>Gray ions still belong to the crystal-like network. Colored ions have detached from the main cluster and are surrounded by water.</p>
-        <div class="readout-grid">
-          <div>
-            <span id="timeReadout" class="readout-value">0.00 ns</span>
-            <span class="readout-label">time</span>
-          </div>
-          <div>
-            <span id="releasedReadout" class="readout-value">0</span>
-            <span class="readout-label">ions outside the main cluster</span>
-          </div>
-        </div>
-      </aside>
     </section>
 
     <section>
       <h2>The molecular story</h2>
-      <div class="gallery-grid">
-        <article class="card">
-          <h3>Ordered start</h3>
-          <p>The simulation begins from a small crystal-like NaCl cluster surrounded by water.</p>
-        </article>
-        <article class="card">
-          <h3>Surface erosion</h3>
-          <p>Ions near the surface detach first, so the cluster becomes rougher rather than disappearing all at once.</p>
-        </article>
-        <article class="card">
-          <h3>Hydration</h3>
-          <p>Released sodium and chloride ions become wrapped by nearby water molecules.</p>
-        </article>
-      </div>
+      <img class="wide-figure" src="../../assets/projects/salt-dissolution/project002_300K_three_panel_public.png" alt="Three simulation frames showing a salt cluster at 0 ns, 0.5 ns, and 1 ns">
+    </section>
+
+    <section class="gallery-grid frame-gallery">
+      <article class="card">
+        <img src="../../assets/projects/salt-dissolution/project002_0ns_public.png" alt="NaCl cluster at 0 ns">
+        <h3>0 ns</h3>
+        <p>The cluster starts in an ordered, crystal-like arrangement.</p>
+      </article>
+      <article class="card">
+        <img src="../../assets/projects/salt-dissolution/project002_0p5ns_public.png" alt="NaCl cluster at 0.5 ns">
+        <h3>0.5 ns</h3>
+        <p>The surface has already become less regular.</p>
+      </article>
+      <article class="card">
+        <img src="../../assets/projects/salt-dissolution/project002_1ns_public.png" alt="NaCl cluster at 1 ns">
+        <h3>1 ns</h3>
+        <p>More ions sit outside the largest connected cluster.</p>
+      </article>
     </section>
 
     <section class="dissolution-summary">
       <div>
         <h2>What happened in this run</h2>
-        <p>In a 1 ns room-temperature simulation, the nanoscale salt cluster did not vanish instantly. Instead, the connected ion network eroded from the surface. By the final frame, 57 ions were outside the largest connected cluster.</p>
+        <p>In this 1 ns room-temperature simulation, the nanoscale salt cluster did not vanish instantly. It eroded from the surface. By the final frame, 57 ions were outside the largest connected cluster.</p>
       </div>
-      <div class="mini-figure" aria-hidden="true">
-        <span style="height: 100%"></span>
-        <span style="height: 92%"></span>
-        <span style="height: 80%"></span>
-        <span style="height: 74%"></span>
-        <span style="height: 68%"></span>
-      </div>
+      <img src="../../assets/projects/salt-dissolution/project002_300K_cluster_erosion.png" alt="Cluster erosion summary for the salt dissolution simulation">
     </section>
 
     <section class="grid-2">
@@ -101,147 +89,5 @@
       © 2026 Senal Liyanage · <a href="../../index.html">Home</a> · <a href="../../projects.html">Projects</a> · <a href="https://github.com/senal-liyanage">GitHub</a>
     </div>
   </footer>
-
-<script>
-(function () {
-  const canvas = document.getElementById('saltCanvas');
-  const ctx = canvas.getContext('2d');
-  const slider = document.getElementById('timeSlider');
-  const button = document.getElementById('playPause');
-  const timeReadout = document.getElementById('timeReadout');
-  const releasedReadout = document.getElementById('releasedReadout');
-  const W = canvas.width;
-  const H = canvas.height;
-  let playing = true;
-  let frame = 0;
-
-  const cluster = [];
-  const rows = 7;
-  const cols = 7;
-  const spacing = 38;
-  const startX = 305;
-  const startY = 190;
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      const edge = r === 0 || c === 0 || r === rows - 1 || c === cols - 1;
-      const corner = (r === 0 || r === rows - 1) && (c === 0 || c === cols - 1);
-      cluster.push({
-        x0: startX + c * spacing,
-        y0: startY + r * spacing,
-        charge: (r + c) % 2 === 0 ? 'na' : 'cl',
-        edge,
-        corner,
-        phase: (r * 11 + c * 7) * 0.31,
-        release: edge ? Math.min(0.92, 0.18 + (r + c) * 0.035 + (corner ? 0.12 : 0)) : 1.2,
-        dx: (c - 3) * 42 + (corner ? (c < 3 ? -80 : 80) : 0),
-        dy: (r - 3) * 35 + (corner ? (r < 3 ? -60 : 60) : 0)
-      });
-    }
-  }
-
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function smoothstep(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
-
-  function drawWater() {
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(0, 0, W, H);
-    const grad = ctx.createLinearGradient(0, 0, 0, H);
-    grad.addColorStop(0, 'rgba(39,94,254,0.08)');
-    grad.addColorStop(0.55, 'rgba(39,94,254,0.035)');
-    grad.addColorStop(1, 'rgba(255,246,232,0.75)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
-
-    ctx.fillStyle = 'rgba(39,94,254,0.12)';
-    for (let i = 0; i < 70; i++) {
-      const x = (i * 137) % W;
-      const y = (i * 83) % H;
-      ctx.beginPath();
-      ctx.arc(x, y, 2.2, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  function draw(t) {
-    drawWater();
-    ctx.textAlign = 'left';
-    ctx.fillStyle = '#172033';
-    ctx.font = '25px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
-    ctx.fillText('salt cluster in water', 42, 52);
-    ctx.font = '15px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
-    ctx.fillStyle = '#5b6578';
-    ctx.fillText('gray = connected crystal-like cluster     blue/green = released hydrated ions', 42, 82);
-
-    let released = 0;
-    for (const ion of cluster) {
-      const s = smoothstep((t - ion.release) / 0.22);
-      if (s > 0.35) released++;
-      const wiggle = Math.sin(t * 10 + ion.phase) * 5;
-      const x = lerp(ion.x0, ion.x0 + ion.dx, s) + wiggle * s;
-      const y = lerp(ion.y0, ion.y0 + ion.dy, s) + Math.cos(t * 9 + ion.phase) * 4 * s;
-
-      if (s > 0.15) {
-        ctx.beginPath();
-        ctx.arc(x, y, 25 + 7 * s, 0, Math.PI * 2);
-        ctx.fillStyle = ion.charge === 'na' ? 'rgba(39,94,254,0.12)' : 'rgba(22,163,74,0.12)';
-        ctx.fill();
-      }
-
-      ctx.beginPath();
-      ctx.arc(x, y, s > 0.2 ? 13 : 11, 0, Math.PI * 2);
-      if (s > 0.25) {
-        ctx.fillStyle = ion.charge === 'na' ? 'rgba(39,94,254,0.86)' : 'rgba(22,163,74,0.86)';
-      } else {
-        ctx.fillStyle = 'rgba(100,116,139,0.58)';
-      }
-      ctx.fill();
-      ctx.strokeStyle = 'rgba(255,255,255,0.8)';
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      if (s > 0.35) {
-        ctx.fillStyle = '#ffffff';
-        ctx.font = '11px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText(ion.charge === 'na' ? '+' : '−', x, y + 4);
-      }
-    }
-
-    ctx.textAlign = 'center';
-    ctx.fillStyle = '#172033';
-    ctx.font = '18px sans-serif';
-    ctx.fillText(`time ≈ ${(t).toFixed(2)} ns`, W / 2, H - 54);
-    ctx.fillStyle = '#5b6578';
-    ctx.font = '16px sans-serif';
-    ctx.fillText(`${Math.round(released * 57 / 40)} ions outside the largest connected cluster`, W / 2, H - 26);
-
-    timeReadout.textContent = `${t.toFixed(2)} ns`;
-    releasedReadout.textContent = Math.round(released * 57 / 40);
-  }
-
-  function tick() {
-    if (playing) {
-      frame = (frame + 0.55) % 100;
-      slider.value = String(Math.round(frame));
-    } else {
-      frame = Number(slider.value);
-    }
-    draw(frame / 100);
-    requestAnimationFrame(tick);
-  }
-
-  slider.addEventListener('input', () => {
-    playing = false;
-    button.textContent = 'Play';
-    frame = Number(slider.value);
-  });
-  button.addEventListener('click', () => {
-    playing = !playing;
-    button.textContent = playing ? 'Pause' : 'Play';
-  });
-
-  tick();
-})();
-</script>
 </body>
 </html>
