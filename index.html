@@ -7,12 +7,12 @@
   <title>Senal Liyanage | Computational Chemistry & Scientific Computing</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <div class="navbar">
       <div class="brand-block">
         <a class="brand" href="index.html">Senal Liyanage</a>
-        <div class="brand-subtitle">Computational chemistry · scientific computing</div>
+        <div class="brand-subtitle">Computational chemist · scientific computing researcher</div>
       </div>
       <nav aria-label="Primary navigation">
         <a href="projects.html">Work</a>
@@ -26,15 +26,15 @@
     <section class="hero home-hero">
       <div>
         <p class="eyebrow">Computational chemistry · molecular simulation · scientific software</p>
-        <h1>Computational models, scientific software, and molecular simulation.</h1>
-        <p class="lede">I build and analyze molecular models, turn simulation data into interpretable evidence, and develop reproducible computational workflows for chemistry and molecular science.</p>
+        <h1>Molecular simulation, scientific software, and computational workflows.</h1>
+        <p class="lede">I build molecular models, analyze simulation data, and develop reproducible tools that turn computational output into interpretable scientific evidence.</p>
         <div class="hero-actions">
           <a class="button" href="projects.html">Selected work</a>
           <a class="text-link" href="research.html">Research practice</a>
         </div>
       </div>
 
-      <div>
+      <aside class="hero-practice" aria-label="Core practice">
         <p class="eyebrow">Core practice</p>
         <ul class="capability-list">
           <li><span>Molecular dynamics</span><span>systems → trajectories → analysis</span></li>
@@ -42,32 +42,39 @@
           <li><span>Scientific software</span><span>Python · CLI · testing</span></li>
           <li><span>Scientific computing</span><span>batch · GPU · HPC workflows</span></li>
         </ul>
-      </div>
+      </aside>
     </section>
 
-    <section>
+    <section class="home-selected-work">
       <div class="section-heading">
         <div>
           <p class="eyebrow">Selected work</p>
-          <h2>Selected work across simulation and scientific software.</h2>
+          <h2>Selected computational work.</h2>
         </div>
-        <p>A small set of case studies and software projects chosen to show how I formulate computational questions, build workflows, analyze results, and communicate limitations.</p>
+        <p>Case studies and software chosen to show the full path from computational question to implementation, analysis, interpretation, and reproducibility.</p>
       </div>
 
-      <div class="work-list">
-        <article class="work-row">
-          <div class="work-index">01</div>
-          <div>
-            <h3><a href="projects/salt-dissolution/">NaCl dissolution in water</a></h3>
-            <p>Molecular-dynamics case study following surface erosion and ion detachment from a nanoscale salt cluster in explicit water.</p>
-          </div>
+      <div class="feature-work home-feature">
+        <a class="feature-media" href="projects/salt-dissolution/" aria-label="Open NaCl dissolution case study">
+          <img src="assets/projects/salt-dissolution/project002_300K_nacl_dissolution_square_poster.png" alt="Molecular simulation view of a nanoscale salt cluster in water">
+        </a>
+        <div class="feature-copy">
+          <p class="eyebrow">01 · Molecular dynamics case study</p>
+          <h2><a href="projects/salt-dissolution/">NaCl dissolution in water</a></h2>
+          <p>Real trajectory media and connected-cluster analysis track progressive surface erosion and ion detachment from a nanoscale NaCl cluster in explicit water.</p>
           <div class="work-meta">
-            <span>Molecular dynamics</span>
             <span>TIP4P/2005</span>
+            <span>300 K</span>
+            <span>1 ns</span>
             <span>trajectory analysis</span>
           </div>
-        </article>
+          <div class="link-row">
+            <a class="text-link" href="projects/salt-dissolution/">Read the case study</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="work-list home-work-list">
         <article class="work-row">
           <div class="work-index">02</div>
           <div>
@@ -86,7 +93,7 @@
           <div class="work-index">03</div>
           <div>
             <h3><a href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a></h3>
-            <p>Reusable utilities for molecular-file processing, charge analysis, structural inspection, radial-density analysis, hydration shells, and interfacial orientation.</p>
+            <p>Reusable utilities for molecular-file processing and trajectory analysis, including radial density, hydration shells, and interfacial orientation.</p>
           </div>
           <div class="work-meta">
             <span>Python</span>
@@ -96,57 +103,57 @@
           </div>
         </article>
       </div>
+
+      <div class="section-end-link">
+        <a class="text-link" href="projects.html">View all selected work</a>
+      </div>
     </section>
 
     <section>
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Simulation study</p>
-          <h2>NaCl dissolution in water</h2>
+          <p class="eyebrow">Research practice</p>
+          <h2>Methods connected by a common workflow.</h2>
         </div>
-        <p>The current flagship case study uses real simulation media and a quantitative cluster metric to separate molecular interpretation from visual impression.</p>
+        <p>Across simulation, electronic structure, and scientific software, I treat model construction, analysis, validation, and reproducibility as parts of the same research process.</p>
       </div>
 
-      <div class="feature-work">
-        <a class="feature-media" href="projects/salt-dissolution/" aria-label="Open NaCl dissolution case study">
-          <img src="assets/projects/salt-dissolution/project002_300K_nacl_dissolution_square_poster.png" alt="Molecular simulation view of a nanoscale salt cluster in water">
-        </a>
-        <div class="feature-copy">
-          <p class="eyebrow">Molecular dynamics · 300 K · 1 ns</p>
-          <h3>From ordered lattice to hydrated ions</h3>
-          <p>The analysis follows progressive surface roughening and ion detachment rather than treating the trajectory as a molecular movie alone.</p>
-          <div class="link-row">
-            <a class="text-link" href="projects/salt-dissolution/">Read the case study</a>
-          </div>
-        </div>
+      <div class="practice-grid">
+        <article>
+          <p class="eyebrow">01</p>
+          <h3>Molecular simulation</h3>
+          <p>Solvation, interfaces, structural change, contacts, hydration, orientation, and trajectory-derived observables.</p>
+        </article>
+        <article>
+          <p class="eyebrow">02</p>
+          <h3>Electronic structure</h3>
+          <p>TDDFT analysis that connects excited-state calculations, spectra, spectral regions, and molecular geometry.</p>
+        </article>
+        <article>
+          <p class="eyebrow">03</p>
+          <h3>Scientific software</h3>
+          <p>Inspectable Python and command-line tools built around recurring research tasks rather than one-off analyses.</p>
+        </article>
+        <article>
+          <p class="eyebrow">04</p>
+          <h3>Scientific computing</h3>
+          <p>Batch-oriented, GPU-enabled, and HPC workflows designed to make computational research repeatable at scale.</p>
+        </article>
+      </div>
+
+      <div class="section-end-link">
+        <a class="text-link" href="research.html">Explore research practice</a>
       </div>
     </section>
 
-    <section id="code">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Open code</p>
-          <h2>Tools built around research workflows.</h2>
-        </div>
-        <p>Public repositories emphasize reproducible inputs and outputs, command-line use, scientific assumptions, and separation of code from unpublished or restricted research data.</p>
+    <section class="home-code-strip">
+      <div>
+        <p class="eyebrow">More code</p>
+        <h2>Public workflows and utilities.</h2>
       </div>
-
-      <div class="repo-list">
-        <article class="repo-row">
-          <h3><a href="https://github.com/senal-liyanage/qctddft">qctddft</a></h3>
-          <p>End-to-end TDDFT analysis from Q-Chem outputs to spectra, spectral regions, state assignments, and representative geometries.</p>
-          <a class="repo-arrow" href="https://github.com/senal-liyanage/qctddft" aria-label="Open qctddft on GitHub">↗</a>
-        </article>
-        <article class="repo-row">
-          <h3><a href="https://github.com/senal-liyanage/chemistry-analysis-tools">chemistry-analysis-tools</a></h3>
-          <p>Focused utilities for molecular files and trajectory analysis, including radial density, hydration shells, and interfacial orientation.</p>
-          <a class="repo-arrow" href="https://github.com/senal-liyanage/chemistry-analysis-tools" aria-label="Open chemistry-analysis-tools on GitHub">↗</a>
-        </article>
-        <article class="repo-row">
-          <h3><a href="https://github.com/senal-liyanage/AmberMD-Scripting">AmberMD-Scripting</a></h3>
-          <p>Lightweight Bash helpers for staged AMBER minimization, heating, equilibration, and GPU production workflows.</p>
-          <a class="repo-arrow" href="https://github.com/senal-liyanage/AmberMD-Scripting" aria-label="Open AmberMD-Scripting on GitHub">↗</a>
-        </article>
+      <div class="home-code-links">
+        <a href="https://github.com/senal-liyanage/AmberMD-Scripting">AmberMD-Scripting ↗</a>
+        <a href="https://github.com/senal-liyanage">GitHub profile ↗</a>
       </div>
     </section>
   </main>
