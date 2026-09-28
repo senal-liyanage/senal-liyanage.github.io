@@ -846,3 +846,29 @@ h3 {
     justify-content: flex-start;
   }
 }
+
+
+/* Homepage final polish */
+.home-feature .feature-media img {
+  aspect-ratio: 16 / 8.9;
+}
+
+.home-work-list .work-row {
+  grid-template-columns: 72px minmax(0, 1.15fr) minmax(220px, 0.62fr);
+  gap: 1.6rem;
+}
+
+.home-work-list .work-meta {
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 900px) {
+  .home-work-list .work-row {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .home-work-list .work-row .work-meta {
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
