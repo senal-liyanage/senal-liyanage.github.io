@@ -327,6 +327,8 @@ h3 {
 }
 
 .feature-copy .eyebrow { margin-bottom: 0.8rem; }
+.feature-copy h2 a { color: var(--text); }
+.feature-copy h2 a:hover { color: var(--accent); }
 
 .feature-copy p {
   color: var(--muted);
@@ -452,6 +454,8 @@ h3 {
   max-width: 1040px;
   margin: 5rem auto 0;
 }
+
+.case-body .case-section { margin-top: 0; }
 
 .case-section {
   display: grid;
