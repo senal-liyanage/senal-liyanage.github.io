@@ -1,23 +1,42 @@
-# Senal Liyanage Molecular Simulation Portfolio
+# Senal Liyanage — Computational Science Portfolio
 
-This repository hosts a public molecular simulation portfolio focused on computational chemistry, reproducible analysis workflows, scientific visualization, and portfolio-safe notes for ongoing work.
+This repository hosts the public portfolio of Senal Liyanage, focused on computational chemistry, molecular simulation, scientific software, and reproducible scientific computing.
 
-## Site purpose
+## Site structure
 
-The website is intended as a concise public landing page for simulation projects, selected repositories, research themes, and protected-source project notes. It highlights public examples while keeping unpublished data, collaborator-owned materials, and publication-sensitive source code outside the public site.
+- `index.html` — professional landing page and selected work
+- `projects.html` — curated case studies and public scientific software
+- `research.html` — research practice organized around methods and public evidence
+- `projects/salt-dissolution/` — molecular-dynamics case study using real simulation media and cluster analysis
+- `projects/water-vaporization/` — scientific-visualization study based on an OpenMM water-slab model
+- `assets/css/style.css` — shared visual system for the complete site
 
-## Main sections
+## Editorial model
 
-- `index.html` — landing page for the simulation portfolio
-- `projects.html` — public simulation projects, selected repositories, and protected-source project notes
-- `research.html` — research themes and portfolio-safe case-study style
-- `projects/water-vaporization/` — Project 001, a public-facing water vaporization simulation example
-- `assets/css/style.css` — shared site styling
+The portfolio is organized around **work rather than posts**. Case studies use a consistent research structure:
 
-## Project 001
+1. computational question
+2. method / model
+3. results or visualization
+4. interpretation and limitations
+5. reproducibility / related work
 
-**When Hydrogen Bonds Let Go** is a simulation-for-fun project showing molecular vaporization from a TIP4P/2005 water slab. The public website version includes an interactive browser animation and model-reliability note rather than raw trajectories or large rendered media.
+Poetic or science-communication framing is secondary to technical titles, methods, evidence, and explicit limitations.
+
+## Public code represented on the site
+
+The portfolio links to selected public repositories including:
+
+- [qctddft](https://github.com/senal-liyanage/qctddft) — TDDFT post-processing, spectra, state assignment, and structural clustering
+- [chemistry-analysis-tools](https://github.com/senal-liyanage/chemistry-analysis-tools) — molecular-file and trajectory-analysis utilities
+- [AmberMD-Scripting](https://github.com/senal-liyanage/AmberMD-Scripting) — staged AMBER workflow helpers
 
 ## Public-content policy
 
-This repository should contain only public, approved, and non-sensitive content. Do not commit private resumes, unpublished trajectories, collaborator-owned data, private manuscript files, credentials, home addresses, phone numbers, immigration details, or large simulation outputs.
+This repository should contain only public, approved, and non-sensitive content. Do not commit private resumes, unpublished production trajectories, collaborator-owned data, manuscript-sensitive source material, credentials, home addresses, phone numbers, immigration details, or large simulation outputs that are not intended for public distribution.
+
+The site may describe research methods at a portfolio-safe level while keeping unpublished results and restricted inputs outside the public repository.
+
+## Deployment
+
+The site is intentionally static and compatible with GitHub Pages without a build step. The current refactor keeps deployment simple while establishing a reusable visual and editorial system that can later be migrated to a component-based static-site generator if the number of case studies grows substantially.

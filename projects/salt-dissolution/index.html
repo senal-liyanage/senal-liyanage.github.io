@@ -3,90 +3,139 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Project 002: real molecular simulation media showing a nanoscale salt cluster eroding in water.">
-  <title>Project 002 — When a Crystal Meets Water</title>
+  <meta name="description" content="Molecular-dynamics case study of nanoscale NaCl dissolution in explicit water at 300 K.">
+  <title>NaCl Dissolution in Water | Senal Liyanage</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../../assets/css/project002.css">
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <div class="navbar">
-      <a class="brand" href="../../index.html">Senal Liyanage</a>
+      <div class="brand-block">
+        <a class="brand" href="../../index.html">Senal Liyanage</a>
+        <div class="brand-subtitle">Computational chemistry · scientific computing</div>
+      </div>
       <nav aria-label="Primary navigation">
-        <a href="../../projects.html">Projects</a>
+        <a href="../../projects.html" aria-current="page">Work</a>
         <a href="../../research.html">Research</a>
+        <a href="../../projects.html#code">Code</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero hero-compact project-hero">
-      <p class="eyebrow">Project 002</p>
-      <h1>When a Crystal Meets Water</h1>
-      <p class="lede">I wanted to show a familiar chemical process at molecular scale: an ordered salt cluster beginning to erode as water surrounds individual ions.</p>
+    <section class="hero case-hero">
+      <div class="breadcrumb"><a href="../../projects.html">Work</a><span>/</span><span>Molecular dynamics</span></div>
+      <p class="eyebrow">Simulation case study</p>
+      <h1 class="case-title">NaCl dissolution in water</h1>
+      <p class="case-subtitle">Following surface erosion and ion detachment from an initially ordered nanoscale salt cluster in explicit water.</p>
+
+      <div class="case-meta">
+        <div><span class="meta-label">Method</span><strong>Classical molecular dynamics</strong></div>
+        <div><span class="meta-label">System</span><strong>NaCl cluster + TIP4P/2005 water</strong></div>
+        <div><span class="meta-label">Conditions</span><strong>300 K · 1 ns</strong></div>
+        <div><span class="meta-label">Focus</span><strong>Cluster erosion and hydration</strong></div>
+      </div>
     </section>
 
-    <section class="real-media-stage">
+    <section class="media-stage">
       <video class="simulation-video" autoplay loop muted playsinline controls preload="metadata" poster="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution_poster.png">
         <source src="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution.mp4" type="video/mp4">
         <source src="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution.webm" type="video/webm">
         Your browser does not support the video tag.
       </video>
-      <div class="watch-strip">
-        <div>
-          <h2>What to watch</h2>
-          <p>The ordered salt cluster does not disappear at once. The surface becomes rougher as individual ions leave the connected lattice and move into water.</p>
+      <div class="figure-caption">
+        <strong>Trajectory media</strong>
+        <span>The cluster surface becomes progressively less regular as ions detach from the connected lattice and move into the surrounding water.</span>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <section class="case-section">
+        <div class="section-number">01 / QUESTION</div>
+        <div class="case-copy">
+          <h2>What does the first stage of nanoscale dissolution look like?</h2>
+          <p>The question is deliberately narrower than bulk solubility or a macroscopic dissolution rate. Starting from an ordered NaCl cluster, I wanted to resolve how the connected ionic structure changes when it is exposed to explicit water over a short molecular-dynamics trajectory.</p>
+          <p>The useful distinction is between simply seeing ions move and defining a structural quantity that can be followed through the trajectory.</p>
         </div>
-        <div class="mini-note">Real simulation media from a 300 K NaCl-in-water run.</div>
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2>The molecular story</h2>
-      <img class="wide-figure" src="../../assets/projects/salt-dissolution/project002_300K_three_panel_public.png" alt="Three simulation frames showing a salt cluster at 0 ns, 0.5 ns, and 1 ns">
-    </section>
+      <section class="case-section">
+        <div class="section-number">02 / APPROACH</div>
+        <div class="case-copy">
+          <h2>Pair the trajectory with a connected-cluster measure.</h2>
+          <p>The system places a small NaCl cluster in TIP4P/2005 water and follows an unrestrained 300 K trajectory. Visual inspection provides the molecular context; cluster analysis provides a quantitative summary of how many ions remain in the largest connected ionic structure.</p>
 
-    <section class="gallery-grid frame-gallery">
-      <article class="card">
-        <img src="../../assets/projects/salt-dissolution/project002_0ns_public.png" alt="NaCl cluster at 0 ns">
-        <h3>0 ns</h3>
-        <p>The cluster starts in an ordered, crystal-like arrangement.</p>
-      </article>
-      <article class="card">
-        <img src="../../assets/projects/salt-dissolution/project002_0p5ns_public.png" alt="NaCl cluster at 0.5 ns">
-        <h3>0.5 ns</h3>
-        <p>The surface has become less regular as water interacts with exposed ions.</p>
-      </article>
-      <article class="card">
-        <img src="../../assets/projects/salt-dissolution/project002_1ns_public.png" alt="NaCl cluster at 1 ns">
-        <h3>1 ns</h3>
-        <p>More ions sit outside the largest connected cluster.</p>
-      </article>
-    </section>
+          <dl class="method-list">
+            <div class="method-row"><dt>Water model</dt><dd>TIP4P/2005</dd></div>
+            <div class="method-row"><dt>Temperature</dt><dd>300 K</dd></div>
+            <div class="method-row"><dt>Trajectory window</dt><dd>1 ns</dd></div>
+            <div class="method-row"><dt>Primary observable</dt><dd>Ions outside the largest connected NaCl cluster</dd></div>
+          </dl>
+        </div>
+      </section>
 
-    <section class="dissolution-summary">
-      <div>
-        <h2>What the simulation shows</h2>
-        <p>In this 1 ns, 300 K simulation, the nanoscale salt cluster does not vanish instantly. It erodes from the surface. By the final frame, 57 ions are outside the largest connected cluster.</p>
-      </div>
-      <img src="../../assets/projects/salt-dissolution/project002_300K_cluster_erosion.png" alt="Cluster erosion summary for the salt dissolution simulation">
-    </section>
+      <section class="case-section">
+        <div class="section-number">03 / RESULTS</div>
+        <div class="case-copy">
+          <h2>Surface erosion is progressive rather than instantaneous.</h2>
+          <p>The initial ordered cluster develops an increasingly irregular surface. Individual ions leave the connected structure and occupy the surrounding aqueous region while a substantial cluster remains.</p>
 
-    <section class="grid-2">
-      <article class="card">
-        <h2>How I made it</h2>
-        <p>I placed a small NaCl cluster in TIP4P/2005 water and ran an unrestrained 300 K simulation. The page focuses on the visual sequence: surface ions leave the connected cluster and become hydrated.</p>
-      </article>
-      <article class="card">
-        <h2>Model note</h2>
-        <p>This is a nanoscale dissolution visualization, not a measurement of real dissolution rate or salt solubility. The useful idea is the molecular picture: ordered ions at the surface detach and water stabilizes them.</p>
-      </article>
-    </section>
+          <div class="result-stat">
+            <strong>57 ions</strong>
+            <span>outside the largest connected cluster in the final frame of this 1 ns trajectory.</span>
+          </div>
+
+          <div class="figure-stack">
+            <div>
+              <img class="case-figure" src="../../assets/projects/salt-dissolution/project002_300K_three_panel_public.png" alt="Three molecular simulation frames at 0 ns, 0.5 ns, and 1 ns showing progressive erosion of the sodium chloride cluster">
+              <div class="figure-caption">
+                <strong>Structural sequence</strong>
+                <span>Representative frames at 0, 0.5, and 1 ns show the loss of the initially regular surface.</span>
+              </div>
+            </div>
+
+            <div>
+              <img class="case-figure" src="../../assets/projects/salt-dissolution/project002_300K_cluster_erosion.png" alt="Plot summarizing erosion of the largest connected salt cluster during the simulation">
+              <div class="figure-caption">
+                <strong>Cluster analysis</strong>
+                <span>The quantitative summary tracks ions that no longer belong to the largest connected cluster.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="section-number">04 / INTERPRETATION</div>
+        <div class="case-copy">
+          <h2>The trajectory supports a molecular picture, not a bulk dissolution measurement.</h2>
+          <p>At this scale and timescale, the useful conclusion is mechanistic and visual: exposed ions at the surface can detach from the ordered structure and become surrounded by water while the remaining cluster persists.</p>
+          <p class="note">This nanoscale example should not be interpreted as a measured dissolution rate, equilibrium solubility, or direct prediction of macroscopic salt behavior. Those questions require different system sizes, sampling, and thermodynamic analysis.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div class="section-number">05 / REPRODUCIBILITY</div>
+        <div class="case-copy">
+          <h2>Separate public evidence from restricted research material.</h2>
+          <p>This portfolio page contains the public visualization and analysis summary needed to understand the example. Production research data, collaborator-owned material, and manuscript-sensitive inputs are intentionally kept outside the public website.</p>
+          <div class="link-row">
+            <a class="text-link" href="../../projects.html#code">Related analysis tools</a>
+            <a class="text-link" href="../../research.html">Research practice</a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="footer-inner">
-      © 2026 Senal Liyanage · <a href="../../index.html">Home</a> · <a href="../../projects.html">Projects</a> · <a href="https://github.com/senal-liyanage">GitHub</a>
+      <span>© 2026 Senal Liyanage</span>
+      <div class="footer-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../projects.html">Work</a>
+        <a href="https://github.com/senal-liyanage">GitHub</a>
+      </div>
     </div>
   </footer>
 </body>
