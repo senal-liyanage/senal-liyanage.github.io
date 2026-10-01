@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body class="salt-case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="navbar">
       <div class="brand-block">
@@ -22,7 +23,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero case-hero">
       <div class="breadcrumb"><a href="../../projects.html">Work</a><span>/</span><span>Molecular dynamics</span></div>
       <p class="eyebrow">Simulation case study</p>
@@ -42,7 +43,7 @@
     </section>
 
     <section class="media-stage case-video-stage">
-      <video class="simulation-video" autoplay loop muted playsinline controls preload="metadata" poster="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution_poster.png">
+      <video class="simulation-video" autoplay loop muted playsinline controls preload="metadata" aria-label="Molecular dynamics trajectory of nanoscale sodium chloride dissolution in water" poster="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution_poster.png">
         <source src="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution.mp4" type="video/mp4">
         <source src="../../assets/projects/salt-dissolution/project002_300K_nacl_dissolution.webm" type="video/webm">
         Your browser does not support the video tag.
@@ -144,11 +145,19 @@
     <div class="footer-inner">
       <span>© 2026 Senal Liyanage</span>
       <div class="footer-links">
-        <a href="../../index.html">Home</a>
-        <a href="../../projects.html">Work</a>
         <a href="https://github.com/senal-liyanage">GitHub</a>
+        <a href="https://www.linkedin.com/in/senal-liyanage/">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=DEt6kbQAAAAJ&hl=en">Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-9166-0527">ORCID</a>
       </div>
     </div>
   </footer>
+<script>
+(function () {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const video = document.querySelector('.simulation-video');
+  if (video && reducedMotion.matches) video.pause();
+})();
+</script>
 </body>
 </html>

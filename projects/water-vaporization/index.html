@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 <body class="water-case-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <div class="navbar">
       <div class="brand-block">
@@ -22,7 +23,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero case-hero">
       <div class="breadcrumb"><a href="../../projects.html">Work</a><span>/</span><span>Scientific visualization</span></div>
       <p class="eyebrow">Scientific visualization case study</p>
@@ -94,9 +95,10 @@
     <div class="footer-inner">
       <span>© 2026 Senal Liyanage</span>
       <div class="footer-links">
-        <a href="../../index.html">Home</a>
-        <a href="../../projects.html">Work</a>
         <a href="https://github.com/senal-liyanage">GitHub</a>
+        <a href="https://www.linkedin.com/in/senal-liyanage/">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=DEt6kbQAAAAJ&hl=en">Google Scholar</a>
+        <a href="https://orcid.org/0000-0002-9166-0527">ORCID</a>
       </div>
     </div>
   </footer>
@@ -202,7 +204,12 @@
     frame = (frame + 1) % 161;
     requestAnimationFrame(loop);
   }
-  loop();
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    drawFrame(110);
+  } else {
+    loop();
+  }
 })();
 </script>
 </body>

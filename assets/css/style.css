@@ -1240,3 +1240,96 @@ h3 {
     padding: 3.3rem 0 2.35rem;
   }
 }
+
+
+/* Site-wide consistency, accessibility, and small-screen hardening */
+.skip-link {
+  position: fixed;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 100;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  background: var(--text);
+  color: #fff;
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 120ms ease;
+}
+
+.skip-link:focus {
+  color: #fff;
+  transform: translateY(0);
+}
+
+.brand-subtitle,
+.work-meta,
+.method-row dd,
+.case-meta strong,
+.case-role-meta strong {
+  overflow-wrap: anywhere;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .skip-link {
+    transition: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .navbar {
+    padding: 0.85rem 1.1rem 0.75rem;
+    gap: 0.45rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  nav {
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    font-size: 0.88rem;
+  }
+
+  .capability-list li {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .capability-list span:last-child {
+    text-align: left;
+  }
+
+  .work-row h3,
+  .repo-row h3,
+  .publication-row h3,
+  .study-row h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .footer-inner {
+    padding: 1.5rem 1.1rem;
+    gap: 0.8rem;
+  }
+
+  .footer-links {
+    gap: 0.35rem 0.9rem;
+  }
+}
