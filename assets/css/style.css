@@ -1206,3 +1206,37 @@ h3 {
     justify-content: flex-start;
   }
 }
+
+
+/* Water visualization case-study polish */
+.water-case-page .case-hero {
+  padding: 4.2rem 0 2.65rem;
+}
+
+.water-case-page .breadcrumb {
+  margin-bottom: 1.35rem;
+}
+
+.water-case-page .case-meta {
+  margin-top: 2.35rem;
+}
+
+.water-visual-stage {
+  max-width: 930px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.water-visual-stage .canvas-shell {
+  padding: 0.8rem;
+}
+
+.water-visual-stage .canvas-shell canvas {
+  width: min(100%, 800px);
+}
+
+@media (max-width: 680px) {
+  .water-case-page .case-hero {
+    padding: 3.3rem 0 2.35rem;
+  }
+}
