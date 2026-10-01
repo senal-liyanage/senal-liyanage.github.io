@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research practice of Senal Liyanage across molecular simulation, electronic structure, scientific software, and reproducible scientific computing.">
+  <meta name="description" content="Research directions, computational methods, and selected publications by Senal Liyanage across molecular simulation, biomolecular modeling, electronic structure, scientific software, and HPC.">
   <title>Research | Senal Liyanage</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="research-page">
   <header class="site-header">
     <div class="navbar">
       <div class="brand-block">
         <a class="brand" href="index.html">Senal Liyanage</a>
-        <div class="brand-subtitle">Computational chemistry · scientific computing</div>
+        <div class="brand-subtitle">Computational Chemist · Scientific Computing Researcher</div>
       </div>
       <nav aria-label="Primary navigation">
         <a href="projects.html">Work</a>
@@ -23,90 +23,170 @@
   </header>
 
   <main>
-    <section class="hero">
-      <p class="eyebrow">Research practice</p>
-      <h1>Model molecular behavior, interrogate the trajectory, test the interpretation.</h1>
-      <p class="lede">My work spans molecular simulation, electronic-structure analysis, and scientific software. Across those areas, the common goal is to turn computational output into reproducible evidence rather than treating calculation or visualization as the endpoint.</p>
+    <section class="hero research-hero">
+      <p class="eyebrow">Research</p>
+      <h1>Computational research across molecular scales.</h1>
+      <p class="lede">I use molecular simulation, electronic-structure methods, and scientific computing to study molecular structure, dynamics, interfaces, recognition, and spectroscopic behavior—and to build reproducible workflows around those calculations.</p>
     </section>
 
-    <section>
+    <section class="research-directions-section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Research areas</p>
-          <h2>Methods connected to concrete computational work.</h2>
+          <p class="eyebrow">Research directions</p>
+          <h2>Scientific questions first; methods in service of them.</h2>
         </div>
-        <p>These areas describe how I work, not just broad topics of interest. Each is tied to public case studies, code, or a research record.</p>
+        <p>Representative directions connect public case studies, software, and peer-reviewed work without exposing unpublished systems or collaborator-owned data.</p>
       </div>
 
-      <div class="research-programs">
+      <div class="research-programs research-directions">
         <article class="research-program">
           <div>
-            <p class="eyebrow">01 · Molecular simulation</p>
-            <h3>Molecular dynamics, solvation, and interfaces</h3>
+            <p class="eyebrow">01 · Soft materials &amp; interfaces</p>
+            <h3>Molecular simulation of complex molecular environments</h3>
           </div>
           <div>
-            <p>I use atomistic simulation to examine molecular motion, solvation, structural change, and interfacial organization. Analysis emphasizes explicit definitions—cluster membership, radial structure, hydration, orientation, contacts, and related trajectory-derived observables—so conclusions can be traced back to measurable quantities.</p>
-            <div class="link-row">
+            <p>I use atomistic modeling to examine solvation, structural change, interfacial organization, molecular contacts, hydration, orientation, and related trajectory-derived observables. The emphasis is on defining measurable quantities that connect molecular motion to an interpretable physical picture.</p>
+            <div class="evidence-links">
               <a class="text-link" href="projects/salt-dissolution/">NaCl dissolution case study</a>
-              <a class="text-link" href="https://github.com/senal-liyanage/chemistry-analysis-tools">Trajectory-analysis code</a>
+              <a class="text-link" href="https://www.mdpi.com/1420-3049/31/15/2600">2026 lipase-interface paper</a>
+              <a class="text-link" href="https://doi.org/10.1016/j.cej.2023.141596">2023 materials paper</a>
             </div>
           </div>
         </article>
 
         <article class="research-program">
           <div>
-            <p class="eyebrow">02 · Electronic structure</p>
-            <h3>Ensemble TDDFT and spectral interpretation</h3>
+            <p class="eyebrow">02 · Biomolecular modeling</p>
+            <h3>Molecular recognition, biomolecular structure, and membrane systems</h3>
           </div>
           <div>
-            <p>Electronic-structure calculations become more useful when the analysis connects excited-state output to spectra and molecular geometry. The public <strong>qctddft</strong> workflow parses Q-Chem TDDFT results, constructs broadened spectra, identifies spectral regions, assigns states, and clusters structures to recover representative geometries.</p>
-            <div class="link-row">
-              <a class="text-link" href="https://github.com/senal-liyanage/qctddft">Explore qctddft</a>
+            <p>My biomolecular work spans molecular recognition and conformational questions in nucleic-acid and membrane-protein systems. Representative published studies include TMPyP4 binding to a c-MYC G-quadruplex and an all-atom model of the human cardiac sodium channel in a lipid bilayer.</p>
+            <div class="evidence-links">
+              <a class="text-link" href="https://doi.org/10.1080/07391102.2024.2417378">G-quadruplex / TMPyP4 study</a>
+              <a class="text-link" href="https://doi.org/10.1038/s41598-024-78466-4">Cardiac sodium-channel model</a>
             </div>
           </div>
         </article>
 
         <article class="research-program">
           <div>
-            <p class="eyebrow">03 · Scientific software</p>
-            <h3>Reproducible analysis as part of the research method</h3>
+            <p class="eyebrow">03 · Electronic structure &amp; spectroscopy</p>
+            <h3>Excited states, reaction mechanisms, and structural ensembles</h3>
           </div>
           <div>
-            <p>I build small, inspectable tools around recurring scientific tasks rather than leaving analysis logic embedded in one-off notebooks. Public examples include an installable Python CLI, trajectory-analysis utilities, molecular-file processing, environment definitions, tests, and CI checks.</p>
-            <div class="link-row">
-              <a class="text-link" href="projects.html#code">Selected software</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="research-program">
-          <div>
-            <p class="eyebrow">04 · Scientific computing</p>
-            <h3>Batch, GPU, and HPC-oriented workflows</h3>
-          </div>
-          <div>
-            <p>Many molecular calculations are workflow problems as much as modeling problems. My public code includes command-line pipelines designed for batch execution and staged AMBER helpers that separate minimization, heating, equilibration, and GPU production dynamics into repeatable steps.</p>
-            <div class="link-row">
-              <a class="text-link" href="https://github.com/senal-liyanage/AmberMD-Scripting">AMBER workflow scripts</a>
-              <a class="text-link" href="https://github.com/senal-liyanage/qctddft">Batch-oriented TDDFT analysis</a>
+            <p>I use quantum-chemical and post-processing workflows to connect electronic-structure calculations with chemically interpretable observables. Public examples include density-functional analysis of linamarin hydrolysis and the qctddft workflow for ensemble TDDFT, broadened spectra, state assignment, and representative-structure clustering.</p>
+            <div class="evidence-links">
+              <a class="text-link" href="https://doi.org/10.1016/j.jmgm.2024.108716">Linamarin DFT study</a>
+              <a class="text-link" href="https://github.com/senal-liyanage/qctddft">qctddft</a>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <section>
+    <section class="research-infrastructure-section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Research record</p>
-          <h2>Publications and researcher identifiers.</h2>
+          <p class="eyebrow">Computational research infrastructure</p>
+          <h2>Scientific software and high-performance computing.</h2>
         </div>
-        <p>The full publication history is maintained in the external scholarly records below rather than duplicated as a static list that can become stale.</p>
+        <p>Simulation and electronic-structure research depend on reliable analysis, automation, and execution environments. I treat those as part of the research method rather than as invisible support work.</p>
       </div>
-      <div class="record-links">
-        <a class="button" href="https://scholar.google.com/citations?user=DEt6kbQAAAAJ&hl=en">Google Scholar</a>
-        <a class="button secondary" href="https://orcid.org/0000-0002-9166-0527">ORCID</a>
-        <a class="button secondary" href="https://github.com/senal-liyanage">GitHub</a>
+
+      <div class="infrastructure-grid">
+        <article>
+          <p class="eyebrow">Software</p>
+          <h3>Inspectable analysis workflows</h3>
+          <p>Python utilities, command-line interfaces, environment definitions, tests, and CI checks for recurring computational-chemistry tasks.</p>
+          <div class="link-row">
+            <a class="text-link" href="projects.html#code">Selected software</a>
+          </div>
+        </article>
+        <article>
+          <p class="eyebrow">HPC &amp; workflow execution</p>
+          <h3>Batch, GPU, and staged simulation pipelines</h3>
+          <p>Batch-oriented processing, GPU-enabled molecular dynamics, staged AMBER workflows, and command-line pipelines designed for repeatable execution.</p>
+          <div class="link-row">
+            <a class="text-link" href="https://github.com/senal-liyanage/AmberMD-Scripting">AMBER workflow scripts</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="publications-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Selected publications</p>
+          <h2>Representative peer-reviewed research.</h2>
+        </div>
+        <p>Representative publications are listed newest first. The complete citation record is available through Google Scholar and ORCID.</p>
+      </div>
+
+      <div class="publication-list">
+        <article class="publication-row">
+          <div class="publication-year">2026</div>
+          <div>
+            <h3><a href="https://doi.org/10.3390/molecules31152600">Interfacial and Molecular Mechanisms of Pancreatic Lipase Modulation by Saponin-Rich Extracts with Antioxidant Activity</a></h3>
+            <p class="publication-meta"><em>Molecules</em> · 31(15), 2600</p>
+            <p class="publication-note">Interfacial and molecular analysis of saponin-rich extracts and pancreatic-lipase modulation.</p>
+          </div>
+          <a class="repo-arrow" href="https://doi.org/10.3390/molecules31152600" aria-label="Open publication">↗</a>
+        </article>
+
+        <article class="publication-row">
+          <div class="publication-year">2025</div>
+          <div>
+            <h3><a href="https://doi.org/10.1080/07391102.2024.2417378">Computational modeling to understand the interaction of TMPyP4 with a G-quadruplex</a></h3>
+            <p class="publication-meta"><em>Journal of Biomolecular Structure and Dynamics</em> · 43(16), 9331–9337</p>
+            <p class="publication-note">Molecular-dynamics and free-energy analysis of TMPyP4 binding modes in a c-MYC G-quadruplex.</p>
+          </div>
+          <a class="repo-arrow" href="https://doi.org/10.1080/07391102.2024.2417378" aria-label="Open publication">↗</a>
+        </article>
+
+        <article class="publication-row">
+          <div class="publication-year">2024</div>
+          <div>
+            <h3><a href="https://doi.org/10.1038/s41598-024-78466-4">An all-atom model of the human cardiac sodium channel in a lipid bilayer</a></h3>
+            <p class="publication-meta"><em>Scientific Reports</em> · 14, 26857</p>
+            <p class="publication-note">All-atom membrane-protein modeling of the human cardiac sodium channel in a lipid environment.</p>
+          </div>
+          <a class="repo-arrow" href="https://doi.org/10.1038/s41598-024-78466-4" aria-label="Open publication">↗</a>
+        </article>
+
+        <article class="publication-row">
+          <div class="publication-year">2024</div>
+          <div>
+            <h3><a href="https://doi.org/10.1016/j.jmgm.2024.108716">Harnessing the anti-cancer potential of linamarin: A computational study on design and hydrolysis mechanisms of its derivatives</a></h3>
+            <p class="publication-meta"><em>Journal of Molecular Graphics and Modelling</em> · 128, 108716</p>
+            <p class="publication-note">Density-functional analysis of linamarin hydrolysis mechanisms and derivative design.</p>
+          </div>
+          <a class="repo-arrow" href="https://doi.org/10.1016/j.jmgm.2024.108716" aria-label="Open publication">↗</a>
+        </article>
+
+        <article class="publication-row">
+          <div class="publication-year">2023</div>
+          <div>
+            <h3><a href="https://doi.org/10.1016/j.cej.2023.141596">A general Metal-Ion-Modification route for preparing hydrophobic paper and tableware from lignocellulose fibers</a></h3>
+            <p class="publication-meta"><em>Chemical Engineering Journal</em> · 459, 141596</p>
+            <p class="publication-note">Interdisciplinary materials study of metal-ion modification in lignocellulosic systems.</p>
+          </div>
+          <a class="repo-arrow" href="https://doi.org/10.1016/j.cej.2023.141596" aria-label="Open publication">↗</a>
+        </article>
+
+        <article class="publication-row">
+          <div class="publication-year">2021</div>
+          <div>
+            <h3><a href="https://doi.org/10.1016/j.jmgm.2020.107767">In silico study for prediction of novel bioactivities of the endophytic fungal alkaloid, mycoleptodiscin B for human targets</a></h3>
+            <p class="publication-meta"><em>Journal of Molecular Graphics and Modelling</em> · 102, 107767</p>
+            <p class="publication-note">Computational target prediction, reverse docking, and pharmacokinetic/toxicity analysis of a fungal natural product.</p>
+          </div>
+          <a class="repo-arrow" href="https://doi.org/10.1016/j.jmgm.2020.107767" aria-label="Open publication">↗</a>
+        </article>
+      </div>
+
+      <div class="publication-record-links">
+        <a class="text-link" href="https://scholar.google.com/citations?user=DEt6kbQAAAAJ&hl=en">Complete record on Google Scholar</a>
+        <a class="text-link" href="https://orcid.org/0000-0002-9166-0527">ORCID</a>
       </div>
     </section>
   </main>
