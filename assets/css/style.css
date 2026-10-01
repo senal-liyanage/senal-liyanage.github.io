@@ -984,3 +984,61 @@ h3 {
     margin-top: 3.8rem;
   }
 }
+
+
+/* NaCl case-study polish */
+.salt-case-page .case-hero {
+  padding: 4.2rem 0 2.65rem;
+}
+
+.salt-case-page .breadcrumb {
+  margin-bottom: 1.35rem;
+}
+
+.salt-case-page .case-meta {
+  margin-top: 2.35rem;
+}
+
+.case-role-meta {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-role-meta strong {
+  font-size: 0.94rem;
+}
+
+.case-video-stage {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-video-stage .simulation-video {
+  max-height: 68vh;
+}
+
+.case-disclosure {
+  margin-top: 1.2rem !important;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 680px) {
+  .salt-case-page .case-hero {
+    padding: 3.3rem 0 2.35rem;
+  }
+
+  .case-role-meta {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .case-video-stage .simulation-video {
+    max-height: none;
+  }
+}
