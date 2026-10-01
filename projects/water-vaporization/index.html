@@ -7,12 +7,12 @@
   <title>Water Slab Vaporization Visualization | Senal Liyanage</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
-<body>
+<body class="water-case-page">
   <header class="site-header">
     <div class="navbar">
       <div class="brand-block">
         <a class="brand" href="../../index.html">Senal Liyanage</a>
-        <div class="brand-subtitle">Computational chemistry · scientific computing</div>
+        <div class="brand-subtitle">Computational Chemist · Scientific Computing Researcher</div>
       </div>
       <nav aria-label="Primary navigation">
         <a href="../../projects.html" aria-current="page">Work</a>
@@ -25,7 +25,7 @@
   <main>
     <section class="hero case-hero">
       <div class="breadcrumb"><a href="../../projects.html">Work</a><span>/</span><span>Scientific visualization</span></div>
-      <p class="eyebrow">Visualization study</p>
+      <p class="eyebrow">Scientific visualization case study</p>
       <h1 class="case-title">Water slab vaporization</h1>
       <p class="case-subtitle">A molecular-simulation example paired with an illustrative browser visualization of water leaving an initially compact liquid slab.</p>
 
@@ -35,32 +35,28 @@
         <div><span class="meta-label">Visualization</span><strong>JavaScript canvas</strong></div>
         <div><span class="meta-label">Purpose</span><strong>Communicate phase-like behavior</strong></div>
       </div>
+      <div class="case-role-meta">
+        <span class="meta-label">My role</span>
+        <strong>Simulation setup · OpenMM · visualization design · JavaScript</strong>
+      </div>
     </section>
 
-    <section class="media-stage">
+    <section class="media-stage water-visual-stage">
       <div class="canvas-shell">
-        <canvas id="evapCanvas" width="800" height="700" aria-label="Illustrative browser visualization of molecules leaving a water slab"></canvas>
+        <canvas id="evapCanvas" width="800" height="620" aria-label="Illustrative browser visualization of molecules leaving a water slab"></canvas>
       </div>
       <div class="figure-caption">
-        <strong>Important distinction</strong>
-        <span>The browser animation is illustrative rather than a rendering of trajectory coordinates. It communicates the slab-to-vapor concept while the simulation model provides the scientific context.</span>
+        <strong>Illustrative view</strong>
+        <span>The browser animation is schematic rather than a rendering of raw trajectory coordinates; it is used to communicate the slab-to-vapor concept clearly.</span>
       </div>
     </section>
 
     <div class="case-body">
       <section class="case-section">
-        <div class="section-number">01 / QUESTION</div>
-        <div class="case-copy">
-          <h2>How can a familiar phase-change idea be communicated at molecular scale?</h2>
-          <p>A liquid slab provides a simple geometry for thinking about molecules moving away from a dense liquid region into vapor space. The scientific problem and the communication problem are related but not identical: one concerns the simulation model, while the other concerns how to make its qualitative behavior legible.</p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div class="section-number">02 / MODEL</div>
+        <div class="section-number">01 / MODEL</div>
         <div class="case-copy">
           <h2>Finite water slab with vapor space.</h2>
-          <p>I simulated TIP4P/2005 water in OpenMM using a finite slab geometry with vapor space along the vertical direction. The high-temperature behavior is the easiest regime to use for a visual explanation because molecules increasingly occupy regions away from the original liquid band.</p>
+          <p>I simulated TIP4P/2005 water in OpenMM using a finite slab geometry with vapor space along one dimension. The setup provides a simple molecular-scale context for visualizing water molecules moving away from an initially dense liquid region.</p>
           <dl class="method-list">
             <div class="method-row"><dt>Water model</dt><dd>TIP4P/2005</dd></div>
             <div class="method-row"><dt>Engine</dt><dd>OpenMM</dd></div>
@@ -71,27 +67,20 @@
       </section>
 
       <section class="case-section">
-        <div class="section-number">03 / VISUALIZATION</div>
+        <div class="section-number">02 / VISUALIZATION</div>
         <div class="case-copy">
-          <h2>Keep the communication layer separate from the simulation evidence.</h2>
-          <p>The blue/orange particle animation is intentionally schematic. Blue points remain near the original liquid region while orange points occupy the vapor space. It is useful as an explanatory interface, but it should not be mistaken for raw molecular coordinates or a trajectory renderer.</p>
-          <p>This distinction is now explicit because scientific visualization is strongest when the viewer can tell which elements are measured, simulated, summarized, or illustrative.</p>
+          <h2>Translate the model into an interpretable browser view.</h2>
+          <p>The canvas animation uses a deliberately simple visual language: blue points represent molecules remaining near the original liquid band, while orange points indicate illustrative molecules occupying regions outside it. The goal is to make the qualitative slab-to-vapor idea legible without presenting the schematic as raw trajectory data.</p>
+          <p>Separating the simulation context from the presentation layer also makes the implementation itself part of the case study: molecular modeling supplies the physical idea, while JavaScript provides an interactive communication layer.</p>
         </div>
       </section>
 
       <section class="case-section">
-        <div class="section-number">04 / LIMITATIONS</div>
+        <div class="section-number">03 / INTERPRETATION &amp; LIMITATIONS</div>
         <div class="case-copy">
-          <h2>This is not a boiling-point calculation.</h2>
-          <p class="note">A nanoscale slab with finite sampling is not equivalent to a macroscopic pot of boiling water. This example is intended to communicate molecular motion and phase-like behavior, not to report a measured boiling point, vapor pressure, or equilibrium phase boundary.</p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div class="section-number">05 / ROLE IN PORTFOLIO</div>
-        <div class="case-copy">
-          <h2>A visualization study, not a flagship research result.</h2>
-          <p>The value of this piece is the combination of simulation context, scientific caveats, and browser-based visualization. More quantitative case studies are presented separately so that illustrative communication does not compete with research evidence.</p>
+          <h2>Use the visualization to explain molecular behavior—not to infer bulk thermodynamics.</h2>
+          <p>The useful takeaway is qualitative: a finite liquid slab provides a clear way to communicate molecules occupying vapor-space regions away from an initially dense band.</p>
+          <p class="note">This example is not a boiling-point, vapor-pressure, or equilibrium phase-boundary calculation. Those quantities require dedicated thermodynamic methods and substantially different sampling.</p>
           <div class="link-row">
             <a class="text-link" href="../salt-dissolution/">View the quantitative MD case study</a>
             <a class="text-link" href="../../projects.html">Selected work</a>
@@ -118,7 +107,7 @@
   const ctx = canvas.getContext('2d');
   const W = canvas.width;
   const H = canvas.height;
-  const plot = {x: 160, y: 78, w: 480, h: 500};
+  const plot = {x: 160, y: 52, w: 480, h: 430};
   const xMax = 4.0;
   const yMax = 12.0;
   const yLo = 2.5;
@@ -152,11 +141,6 @@
     ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, W, H);
-
-    ctx.fillStyle = '#151923';
-    ctx.font = '26px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('water slab: illustrative molecular view', W / 2, 42);
 
     ctx.fillStyle = 'rgba(36,87,214,0.07)';
     ctx.fillRect(plot.x, sy(yHi), plot.w, sy(yLo) - sy(yHi));
@@ -206,10 +190,10 @@
     ctx.fillStyle = '#151923';
     ctx.font = '18px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('illustrative time progression', W / 2, H - 72);
+    ctx.fillText('illustrative time progression', W / 2, H - 62);
     ctx.fillStyle = '#606978';
     ctx.font = '16px sans-serif';
-    ctx.fillText('orange = illustrative molecules outside the original liquid band', W / 2, H - 42);
+    ctx.fillText('orange = illustrative molecules outside the original liquid band', W / 2, H - 32);
   }
 
   let frame = 0;
