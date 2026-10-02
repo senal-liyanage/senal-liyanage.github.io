@@ -1566,3 +1566,20 @@ h3 {
     display: inline;
   }
 }
+
+
+/* Research publication links at tablet widths */
+@media (max-width: 900px) {
+  .publication-row .publication-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .publication-row .publication-link-label {
+    display: inline;
+  }
+}
