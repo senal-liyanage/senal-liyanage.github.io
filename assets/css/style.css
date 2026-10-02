@@ -1546,3 +1546,23 @@ h3 {
     padding-bottom: 2.35rem;
   }
 }
+
+
+/* Work page tablet polish */
+@media (max-width: 900px) {
+  .work-secondary-section .section-heading h2 {
+    display: none;
+  }
+
+  .work-repo-row .repo-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .work-repo-row .repo-link-label {
+    display: inline;
+  }
+}
