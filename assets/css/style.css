@@ -1354,3 +1354,49 @@ h3 {
     margin-top: 2.9rem !important;
   }
 }
+
+
+/* Work page 390px polish */
+.repo-link-label {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .work-secondary-section .section-heading h2 {
+    display: none;
+  }
+
+  .work-secondary-section .section-heading {
+    gap: 0.8rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .work-secondary-section .section-heading p {
+    margin-top: 0;
+  }
+
+  .work-repo-row {
+    padding: 1.25rem 0;
+  }
+
+  .work-repo-row .repo-arrow {
+    grid-column: 1 / -1;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .work-repo-row .repo-link-label {
+    display: inline;
+  }
+
+  .work-page .portfolio-note {
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+}
