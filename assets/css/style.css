@@ -1400,3 +1400,50 @@ h3 {
     line-height: 1.55;
   }
 }
+
+
+/* Research page 390px publication polish */
+.publication-link-label {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .research-page .publications-section {
+    margin-top: 3.15rem;
+  }
+
+  .publication-row {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    padding: 1.25rem 0;
+  }
+
+  .publication-year {
+    padding-top: 0;
+    font-size: 0.75rem;
+  }
+
+  .publication-row h3 {
+    font-size: 1rem;
+  }
+
+  .publication-note {
+    font-size: 0.87rem;
+    line-height: 1.55;
+  }
+
+  .publication-row .publication-link {
+    grid-column: 1;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .publication-link-label {
+    display: inline;
+  }
+}
