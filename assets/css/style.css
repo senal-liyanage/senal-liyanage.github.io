@@ -1447,3 +1447,60 @@ h3 {
     display: inline;
   }
 }
+
+
+/* NaCl case-study 390px polish */
+.figure-full-link {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .salt-case-page .case-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .salt-case-page .case-meta > div {
+    min-width: 0;
+    padding: 0.85rem 0.75rem 0.85rem 0;
+  }
+
+  .salt-case-page .case-meta > div:nth-child(even) {
+    padding-left: 0.75rem;
+    padding-right: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .salt-case-page .case-role-meta {
+    margin-top: 0;
+    padding: 0.85rem 0;
+  }
+
+  .salt-case-page .case-video-stage {
+    margin-top: 2.4rem;
+  }
+
+  .salt-case-page .figure-caption {
+    margin-top: 0.65rem;
+  }
+
+  .salt-case-page .figure-stack {
+    gap: 1.55rem;
+  }
+
+  .salt-case-page .case-section {
+    padding-top: 2.35rem;
+    padding-bottom: 2.35rem;
+  }
+
+  .salt-case-page .result-stat {
+    margin: 1.2rem 0 1.5rem;
+  }
+
+  .figure-full-link {
+    display: inline-flex;
+    margin-top: 0.65rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+}
