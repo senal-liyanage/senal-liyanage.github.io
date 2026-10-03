@@ -1599,3 +1599,12 @@ h3 {
     font-weight: 700;
   }
 }
+
+
+/* Water visualization tablet polish */
+@media (max-width: 900px) and (min-width: 681px) {
+  .water-case-page .case-section {
+    grid-template-columns: 145px minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
