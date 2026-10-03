@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://senal-liyanage.github.io/sitemap.xml
