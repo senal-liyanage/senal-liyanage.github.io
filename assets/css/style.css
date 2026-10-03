@@ -1583,3 +1583,19 @@ h3 {
     display: inline;
   }
 }
+
+
+/* NaCl case-study tablet polish */
+@media (max-width: 900px) and (min-width: 681px) {
+  .salt-case-page .case-section {
+    grid-template-columns: 145px minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .salt-case-page .figure-full-link {
+    display: inline-flex;
+    margin-top: 0.65rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+  }
+}
